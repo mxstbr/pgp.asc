@@ -38,11 +38,11 @@ We can use the website to spread the word about E-Mail encryption and maybe late
 
 ### Copy
 
-I (Max) suck at copywriting, but had to write something to start out. If anyone has any ideas on how to improve the wording, what to include and what to leave out, please discuss it in the issue I've opened.
+I (Max) suck at copywriting, but had to write something to start out. If anyone has any ideas on how to improve the wording, what to include and what to leave out, [discuss it in Issue #2](/../../issues/2)
 
 ### Design
 
-My design is very basic, and not very inviting. Maybe include some sketches (similar to humanstxt.org), some more color? I'll open an issue about it so we can discuss some options.
+My design is very basic, and not very inviting. Maybe include some sketches (similar to humanstxt.org), some more color? [Discuss in Issue #1](/../../issues/1).
 
 ### Backend
 
