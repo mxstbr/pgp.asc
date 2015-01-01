@@ -1,0 +1,144 @@
+/*
+ * SCSS
+ */
+
+ /* Color */
+
+$lightblue: #00b0e9;
+$darkblue: #008dba;
+$black: #313131;
+$darkgrey: #505050;
+$grey: #6e6e6e;
+$lightgrey: #F8F8F8;
+
+/* Typography */
+
+$serif: Georgia, Times, 'Times New Roman', serif;
+$monospace: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+
+/* Mixins */
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+/* 
+ * General stuff
+ */
+
+body {
+	background-color: $lightgrey;
+	color: $black;
+	font-family: $serif;
+}
+
+h1 {
+	font-family: $monospace;
+	color: $black;
+}
+
+h2, h3, h4, h5 {
+ 	font-family: $monospace;
+ 	color: $darkgrey;
+ }
+
+ section {
+ 	padding-bottom: 20px;
+ 	padding-top: 20px;
+ }
+
+ section:first-child {
+ 	padding-top: 0px;
+ }
+
+ a {
+ 	color: $lightblue;
+ 	text-decoration: none;
+ 	@include transition(100ms);
+ }
+
+ a:hover {
+ 	color: $darkblue;
+ }
+
+ a:active {
+ 	position: relative; 
+ 	top: 1px;
+ }
+
+/* 
+ * Header
+ */
+
+.header a {
+	color: $black;
+}
+
+.header a:hover {
+	color: $grey;
+}
+
+.header a:active {
+	top: 0px;
+}
+
+/* Logo */
+
+.logo {
+	text-align: center;
+	font-family: $monospace;
+	font-size: 2em;
+	font-weight: 300;
+	color: #313131;
+}
+
+/* Navigation */
+
+.navWrapper {
+	text-align: center;
+}
+
+.nav {
+	-webkit-padding-start: 0px;
+}
+
+.nav li {
+	display: inline-block;
+	list-style-type: none;
+	text-transform: lowercase;
+}
+
+.nav li:before {
+	content: " / ";
+}
+
+.nav li:first-child:before {
+	content: "";
+}
+
+.current {
+	font-weight: bold;
+}
+
+/*
+ * Main Area
+ */
+
+ .about {
+ 	border-bottom: 1px solid #d8d8d8;
+ }
+
+ .main {
+ 	border-bottom: 1px solid #d8d8d8;
+ }
+
+/*
+ * Footer
+ */
+
+ .footer h3 {
+ 	color: $grey;
+ }
