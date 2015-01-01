@@ -38,16 +38,16 @@ We can use the website to spread the word about E-Mail encryption and maybe late
 
 ### Copy
 
-I (Max) suck at copywriting, but had to write something to start out. If anyone has any ideas on how to improve the wording, what to include and what to leave out, [discuss it in Issue #2](/../../issues/2)
+I (Max) suck at copywriting, but had to write something to start out. If you have any ideas on how to improve the wording, what to include and what to leave out, [discuss it in issue #2](/../../issues/2).
 
 ### Design
 
-My design is very basic, and not very inviting. Maybe include some sketches (similar to humanstxt.org), some more color? [Discuss in Issue #1](/../../issues/1).
+My (Max) design is very basic, and not very inviting. If you want to help with the Design, join the [discussion in issue #1](/../../issues/1)!
 
 ### Backend
 
-I think a "Hall of Fame" is a great idea to motivate people to upload a pgp.asc file to their website. I'd be great if it runs automatically, i.e. people submit their link through the website, we check if the pgp.asc file exists, send them an encrypted mail with the key they provided to the mail adress they provided with a validation link inside. As soon as they click that link, their website gets added to the Hall of Fame. Anybody got any ideas how to accomplish that?
+I think a "Hall of Fame" is a great idea to motivate people to upload a pgp.asc file to their website. I'd be great if it runs automatically, i.e. people submit their link through the website, we check if the pgp.asc file exists, send them an encrypted mail with the key they provided to the mail adress they provided with a validation link inside. As soon as they click that link, their website gets added to the Hall of Fame. Already got an idea on how to accomplish parts of this? Awesome, join the [disscusion in issue #3](/../../issues/3)! For general backend related ideas, please open a new issue!
 
 ### Front-End
 
-As soon as we have decided on a basic design, we can start coding it out. 
+As soon as basic design decisions are made, we can start coding it out. 
