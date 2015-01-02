@@ -14,7 +14,7 @@ $lightgrey: #F8F8F8;
 $white: #FFF;
 
 // palette.
-$ci-color: #765;
+$ci-color: #303F9F;
 
 
 /* Typography */
@@ -165,24 +165,23 @@ h2, h3, h4, h5 {
 // --------------------------------------- 
 // themed
 .header {
- 	background-color: $ci-color;
- 	background-image: linear-gradient(to bottom,$ci-color,darken($ci-color,20));
+ 	background-color: $lightgrey;
  	a {
- 		color: lighten($ci-color,40);
+ 		color: $ci-color;
  		&:hover,
  		&:focus,
  		&:active {
- 			color: $white;
+ 			color: darken($ci-color,20);
 	 	}
  	}
 }
 .logo {
 	a {
-		color: $white;
+		color: darken($ci-color,20);
 		&:hover,
 		&:focus,
 		&:active {
-			color: lighten($ci-color,40);
+			color: darken($ci-color,40);
 		}
 	}
 }
