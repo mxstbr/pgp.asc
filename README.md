@@ -14,7 +14,7 @@ Make your public PGP key (please, please only your public key) available at:
 
 You can even go further and add a meta tag in your `<head>` to make the file even more discoverable:
 
-	<link href="https://helloanselm.com/pgp.asc" rel="me">
+	<link href="https://yoururl.com/pgp.asc" rel="me">
 
 ## Why should I?
 
@@ -58,7 +58,7 @@ My (Max) design is very basic, and not very inviting. If you want to help with t
 
 #### Backend
 
-I think a "Hall of Fame" is a great idea to motivate people to upload a pgp.asc file to their website. I'd be great if it runs automatically, i.e. people submit their link through the website, we check if the pgp.asc file exists, send them an encrypted mail with the key they provided to the mail adress they provided with a validation link inside. As soon as they click that link, their website gets added to the Hall of Fame. Already got an idea on how to accomplish parts of this? Awesome, join the disscusion in issue #3](/../../issues/3)! For general backend related ideas, please open a new issue!
+I think a "Hall of Fame" is a great idea to motivate people to upload a pgp.asc file to their website. I'd be great if it runs automatically, i.e. people submit their link through the website, we check if the pgp.asc file exists, send them an encrypted mail with the key they provided to the mail adress they provided with a validation link inside. As soon as they click that link, their website gets added to the Hall of Fame. Already got an idea on how to accomplish parts of this? Awesome, [join the disscusion in issue #3](/../../issues/3)! For general backend related ideas, please open a new issue!
 
 #### Front-End
 
