@@ -8,13 +8,14 @@
  * General stuff
  */
 body {
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   color: #313131;
-  font-family: Georgia, Times, "Times New Roman", serif; }
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
 h1 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  color: #313131; }
+  color: #313131;
+  text-align: center; }
 
 h2, h3, h4, h5 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
@@ -45,22 +46,29 @@ a:active {
 /* 
  * Header
  */
-.header a {
-  color: #313131; }
-
-.header a:hover {
-  color: #6e6e6e; }
-
-.header a:active {
-  top: 0px; }
+.header {
+  background-color: #6e6e6e; }
+  .header:first-child {
+    padding-top: 2em; }
+  .header a {
+    color: #cccccc; }
+    .header a:hover, .header a:focus, .header a:active {
+      color: white;
+      top: 0px; }
 
 /* Logo */
 .logo {
+  margin-top: 0;
   text-align: center;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   font-size: 2em;
-  font-weight: 300;
-  color: #313131; }
+  letter-spacing: 0.035em;
+  font-weight: 400;
+  color: #f8f8f8; }
+  .logo a {
+    color: inherit; }
+    .logo a:hover, .logo a:focus, .logo a:active {
+      color: #505050; }
 
 /* Navigation */
 .navWrapper {
@@ -98,4 +106,26 @@ a:active {
 .footer h3 {
   color: #6e6e6e; }
 
-/*# sourceMappingURL=style.css.map */
+.header {
+  background-color: #776655;
+  background-image: linear-gradient(to bottom, #776655, #3c332b); }
+  .header a {
+    color: #d5ccc3; }
+    .header a:hover, .header a:focus, .header a:active {
+      color: white; }
+
+.logo a {
+  color: white; }
+  .logo a:hover, .logo a:focus, .logo a:active {
+    color: #d5ccc3; }
+
+h1 {
+  color: #776655; }
+
+h2, h3, .footer h3 {
+  color: #aa9988; }
+
+a {
+  color: #95806a; }
+  a:hover, a:focus, a:active {
+    color: #776655; }
