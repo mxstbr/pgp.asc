@@ -14,7 +14,7 @@ Make your public PGP key (please, please only your public key) available at:
 
 You can even go further and add a meta tag in your `<head>` to make the file even more discoverable:
 
-	<link href="https://yoururl.com/pgp.asc" rel="me">
+	<link href="https://yoururl.com/pgp.asc" rel="pgpkey">
 
 ## Why should I?
 
