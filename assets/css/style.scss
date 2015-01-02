@@ -14,7 +14,7 @@ $lightgrey: #F8F8F8;
 $white: #FFF;
 
 // palette.
-$ci-color: #765;
+$ci-color: #789;
 
 
 /* Typography */
@@ -166,7 +166,7 @@ h2, h3, h4, h5 {
 // themed
 .header {
  	background-color: $ci-color;
- 	background-image: linear-gradient(to bottom,$ci-color,darken($ci-color,20));
+ 	background-image: linear-gradient(to bottom,$ci-color,darken($ci-color,15));
  	a {
  		color: lighten($ci-color,40);
  		&:hover,
