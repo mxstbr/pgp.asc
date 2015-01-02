@@ -110,14 +110,14 @@ a:active {
   background-color: lightslategray;
   background-image: linear-gradient(to bottom, lightslategray, #546270); }
   .header a {
-    color: #eceef0; }
+    color: lightslategray; }
     .header a:hover, .header a:focus, .header a:active {
-      color: white; }
+      color: #495561; }
 
 .logo a {
-  color: white; }
+  color: #495561; }
   .logo a:hover, .logo a:focus, .logo a:active {
-    color: #eceef0; }
+    color: #1d2227; }
 
 h1 {
   color: lightslategray; }
