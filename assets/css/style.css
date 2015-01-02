@@ -107,25 +107,25 @@ a:active {
   color: #6e6e6e; }
 
 .header {
-  background-color: #776655;
-  background-image: linear-gradient(to bottom, #776655, #3c332b); }
+  background-color: lightslategray;
+  background-image: linear-gradient(to bottom, lightslategray, #546270); }
   .header a {
-    color: #d5ccc3; }
+    color: #eceef0; }
     .header a:hover, .header a:focus, .header a:active {
       color: white; }
 
 .logo a {
   color: white; }
   .logo a:hover, .logo a:focus, .logo a:active {
-    color: #d5ccc3; }
+    color: #eceef0; }
 
 h1 {
-  color: #776655; }
+  color: lightslategray; }
 
 h2, h3, .footer h3 {
-  color: #aa9988; }
+  color: #b1bbc5; }
 
 a {
-  color: #95806a; }
+  color: #94a2af; }
   a:hover, a:focus, a:active {
-    color: #776655; }
+    color: lightslategray; }
