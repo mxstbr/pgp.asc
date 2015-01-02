@@ -8,7 +8,7 @@
  * General stuff
  */
 body {
-  background-color: #f8f8f8;
+  background-color: #F8F8F8;
   color: #313131;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
@@ -51,9 +51,9 @@ a:active {
   .header:first-child {
     padding-top: 2em; }
   .header a {
-    color: #cccccc; }
+    color: #CCC; }
     .header a:hover, .header a:focus, .header a:active {
-      color: white;
+      color: #FFF;
       top: 0px; }
 
 /* Logo */
@@ -64,7 +64,7 @@ a:active {
   font-size: 2em;
   letter-spacing: 0.035em;
   font-weight: 400;
-  color: #f8f8f8; }
+  color: #F8F8F8; }
   .logo a {
     color: inherit; }
     .logo a:hover, .logo a:focus, .logo a:active {
@@ -107,25 +107,26 @@ a:active {
   color: #6e6e6e; }
 
 .header {
-  background-color: #776655;
-  background-image: linear-gradient(to bottom, #776655, #3c332b); }
+  background-color: #F8F8F8; }
   .header a {
-    color: #d5ccc3; }
+    color: #303F9F; }
     .header a:hover, .header a:focus, .header a:active {
-      color: white; }
+      color: #182051; }
 
 .logo a {
-  color: white; }
+  color: #182051; }
   .logo a:hover, .logo a:focus, .logo a:active {
-    color: #d5ccc3; }
+    color: #010102; }
 
 h1 {
-  color: #776655; }
+  color: #303F9F; }
 
 h2, h3, .footer h3 {
-  color: #aa9988; }
+  color: #6573d0; }
 
 a {
-  color: #95806a; }
+  color: #3d50c5; }
   a:hover, a:focus, a:active {
-    color: #776655; }
+    color: #303F9F; }
+
+/*# sourceMappingURL=style.css.map */
