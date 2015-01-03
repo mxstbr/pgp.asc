@@ -1,27 +1,30 @@
+//
+// SCSS
+//
+
+@import "normalize.scss";
+
 /*
- * SCSS
- */
+ * Grid
+ */ 
 
- /* Color */
+@import "partials/unsemantic-grid-responsive";
 
-$lightblue: #00b0e9;
+// Colors
+
 $darkblue: #008dba;
 $black: #313131;
-$darkgrey: #505050;
 $grey: #6e6e6e;
-$mediumgrey: #CCC;
 $lightgrey: #F8F8F8;
-$white: #FFF;
+$basecolor: #394856;
 
-// palette.
-$ci-color: #394856;
+// Typography
 
-/* Typography */
 $sans: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
 $serif: Georgia, Times, 'Times New Roman', serif;
 $monospace: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
 
-/* Mixins */
+// Mixins
 
 @mixin transition($transition) {
 	-webkit-transition: $transition;
@@ -42,13 +45,13 @@ body {
 
 h1 {
 	font-family: $monospace;
-	color: $ci-color;
+	color: $basecolor;
 	text-align: center;
 }
 
 h2, .footer h3, h4, h5 {
  	font-family: $monospace;
-	color: lighten($ci-color,10);
+	color: lighten($basecolor,10);
 }
 
  section {
@@ -61,11 +64,11 @@ h2, .footer h3, h4, h5 {
  }
 
  a {
- 	color: lighten($ci-color,10);
+ 	color: lighten($basecolor,10);
  	&:hover,
  	&:focus,
  	&:active {
- 		color: $ci-color;
+ 		color: $basecolor;
  	}
  	text-decoration: none;
  	@include transition(100ms);
@@ -90,11 +93,11 @@ h2, .footer h3, h4, h5 {
 		padding-top: 2em;
 	}
  	a {
- 		color: lighten($ci-color, 5);
+ 		color: lighten($basecolor, 5);
  		&:hover,
  		&:focus,
  		&:active {
- 			color: lighten($ci-color,15);
+ 			color: lighten($basecolor,15);
 	 	}
  	}
 }
@@ -110,11 +113,11 @@ h2, .footer h3, h4, h5 {
 	font-weight: 400;
 	color: $lightgrey;
 	a {
-		color: lighten($ci-color,5);
+		color: lighten($basecolor,5);
 		&:hover,
 		&:focus,
 		&:active {
-			color: lighten($ci-color,15);
+			color: lighten($basecolor,15);
 		}
 	}
 }
