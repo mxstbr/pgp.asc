@@ -8,18 +8,18 @@
  * General stuff
  */
 body {
-  background-color: #f8f8f8;
+  background-color: #F8F8F8;
   color: #313131;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
 h1 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  color: #313131;
+  color: #394856;
   text-align: center; }
 
-h2, h3, h4, h5 {
+h2, .footer h3, h4, h5 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  color: #505050; }
+  color: #4d6275; }
 
 section {
   padding-bottom: 20px;
@@ -29,12 +29,14 @@ section:first-child {
   padding-top: 0px; }
 
 a {
-  color: #00b0e9;
+  color: #4d6275;
   text-decoration: none;
   -webkit-transition: 100ms;
   -moz-transition: 100ms;
   -o-transition: 100ms;
   transition: 100ms; }
+  a:hover, a:focus, a:active {
+    color: #394856; }
 
 a:hover {
   color: #008dba; }
@@ -47,14 +49,13 @@ a:active {
  * Header
  */
 .header {
-  background-color: #6e6e6e; }
+  background-color: #F8F8F8; }
   .header:first-child {
     padding-top: 2em; }
   .header a {
-    color: #cccccc; }
+    color: #435565; }
     .header a:hover, .header a:focus, .header a:active {
-      color: white;
-      top: 0px; }
+      color: #576f84; }
 
 /* Logo */
 .logo {
@@ -64,11 +65,11 @@ a:active {
   font-size: 2em;
   letter-spacing: 0.035em;
   font-weight: 400;
-  color: #f8f8f8; }
+  color: #F8F8F8; }
   .logo a {
-    color: inherit; }
+    color: #435565; }
     .logo a:hover, .logo a:focus, .logo a:active {
-      color: #505050; }
+      color: #576f84; }
 
 /* Navigation */
 .navWrapper {
@@ -97,46 +98,10 @@ a:active {
 .about {
   border-bottom: 1px solid #d8d8d8; }
 
-.main {
-  border-bottom: 1px solid #d8d8d8; }
-
 /*
  * Footer
  */
 .footer h3 {
   color: #6e6e6e; }
 
-body {
-  background-color: #cceaff; }
-
-.header {
-  background-color: #cceaff;
-  background-image: linear-gradient(to bottom, #cceaff, #f8f8f8); }
-  .header a {
-    color: #006ab3; }
-    .header a:hover, .header a:focus, .header a:active {
-      color: #0088e6; }
-
-.logo a {
-  color: #006ab3; }
-  .logo a:hover, .logo a:focus, .logo a:active {
-    color: #0088e6; }
-
-h1 {
-  color: #005b99; }
-
-h2, h3, .footer h3 {
-  color: #0079cc; }
-
-a {
-  color: #0079cc; }
-  a:hover, a:focus, a:active {
-    color: #005b99; }
-
-.main {
-  border-bottom: none;
-  background-color: #f8f8f8; }
-
-.footer {
-  background-color: #cceaff;
-  background-image: linear-gradient(to top, #cceaff, #f8f8f8); }
+/*# sourceMappingURL=style.css.map */

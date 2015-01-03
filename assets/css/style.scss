@@ -14,7 +14,7 @@ $lightgrey: #F8F8F8;
 $white: #FFF;
 
 // palette.
-$ci-color: #005B99;
+$ci-color: #394856;
 
 /* Typography */
 $sans: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
@@ -42,14 +42,14 @@ body {
 
 h1 {
 	font-family: $monospace;
-	color: $black;
+	color: $ci-color;
 	text-align: center;
 }
 
-h2, h3, h4, h5 {
+h2, .footer h3, h4, h5 {
  	font-family: $monospace;
- 	color: $darkgrey;
- }
+	color: lighten($ci-color,10);
+}
 
  section {
  	padding-bottom: 20px;
@@ -61,7 +61,12 @@ h2, h3, h4, h5 {
  }
 
  a {
- 	color: $lightblue;
+ 	color: lighten($ci-color,10);
+ 	&:hover,
+ 	&:focus,
+ 	&:active {
+ 		color: $ci-color;
+ 	}
  	text-decoration: none;
  	@include transition(100ms);
  }
@@ -78,20 +83,20 @@ h2, h3, h4, h5 {
 /* 
  * Header
  */
+
 .header {
-	background-color: $grey;
+	background-color: $lightgrey;
 	&:first-child {
 		padding-top: 2em;
 	}
-	a {
-		color: $mediumgrey;
-		&:hover,
-		&:focus,
-		&:active {
-			color: $white;
-			top: 0px;
-		}
-	}
+ 	a {
+ 		color: lighten($ci-color, 5);
+ 		&:hover,
+ 		&:focus,
+ 		&:active {
+ 			color: lighten($ci-color,15);
+	 	}
+ 	}
 }
 
 /* Logo */
@@ -105,11 +110,11 @@ h2, h3, h4, h5 {
 	font-weight: 400;
 	color: $lightgrey;
 	a {
-		color: inherit;
+		color: lighten($ci-color,5);
 		&:hover,
 		&:focus,
 		&:active {
-			color: $darkgrey;
+			color: lighten($ci-color,15);
 		}
 	}
 }
@@ -150,64 +155,9 @@ h2, h3, h4, h5 {
  	border-bottom: 1px solid #d8d8d8;
  }
 
- .main {
- 	border-bottom: 1px solid #d8d8d8;
- }
-
 /*
  * Footer
  */
  .footer h3 {
  	color: $grey;
  }
-
-// --------------------------------------- 
-// themed
-
-body {
-	background-color: lighten($ci-color,60); 	
-}
-.header {
-	background-color: lighten($ci-color,60);
-	background-image: linear-gradient(to bottom,lighten($ci-color,60),$lightgrey);
- 	a {
- 		color: lighten($ci-color, 5);
- 		&:hover,
- 		&:focus,
- 		&:active {
- 			color: lighten($ci-color,15);
-	 	}
- 	}
-}
-.logo {
-	a {
-		color: lighten($ci-color,5);
-		&:hover,
-		&:focus,
-		&:active {
-			color: lighten($ci-color,15);
-		}
-	}
-}
-h1 {
- 	color: $ci-color;
-}
-h2,h3, .footer h3  {
-	color: lighten($ci-color,10);
-}
-a {
-	color: lighten($ci-color,10);
-	&:hover,
-	&:focus,
-	&:active {
-		color: $ci-color;
-	}
-}
-.main {
-	border-bottom: none;
-	background-color: $lightgrey;
-}
-.footer {
-	background-color: lighten($ci-color,60);
-	background-image: linear-gradient(to top,lighten($ci-color,60),$lightgrey);
-}
