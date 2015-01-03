@@ -166,10 +166,11 @@ h2, h3, h4, h5 {
 
 body {
 
- 	background-image: linear-gradient(to bottom,lighten($ci-color,65),$lightgrey);
+ 	
 }
 .header {
-	background-color: transparent;
+	background-color: $ci-color;
+	background-image: linear-gradient(to bottom,lighten($ci-color,60),$lightgrey);
  	a {
  		color: lighten($ci-color, 5);
  		&:hover,
