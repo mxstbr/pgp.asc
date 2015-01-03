@@ -106,11 +106,9 @@ a:active {
 .footer h3 {
   color: #6e6e6e; }
 
-body {
-  background-image: linear-gradient(to bottom, #e5f5ff, #F8F8F8); }
-
 .header {
-  background-color: transparent; }
+  background-color: #005B99;
+  background-image: linear-gradient(to bottom, #cceaff, #F8F8F8); }
   .header a {
     color: #006ab3; }
     .header a:hover, .header a:focus, .header a:active {
