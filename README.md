@@ -44,6 +44,7 @@ We basically need help with everything, ranging from Front-End and Design over B
 	- [ ] Design, [Discussion](/../../issues/1)
 		- [ ] Color Scheme
 		- [ ] Sketches/Pictures? (similar to [humans.txt](http://humanstxt.org))
+		- [ ] Logo?
 	- [ ] Automated Hall of Fame, [Discussion](/../../issues/3)
 - [ ] Copywriting
 	- [ ] General Copy, [Discussion](/../../issues/2)
