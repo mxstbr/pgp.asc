@@ -10,15 +10,16 @@
 body {
   background-color: #F8F8F8;
   color: #313131;
-  font-family: Georgia, Times, "Times New Roman", serif; }
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
 h1 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  color: #313131; }
+  color: #394856;
+  text-align: center; }
 
-h2, h3, h4, h5 {
+h2, .footer h3, h4, h5 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  color: #505050; }
+  color: #4d6275; }
 
 section {
   padding-bottom: 20px;
@@ -28,12 +29,14 @@ section:first-child {
   padding-top: 0px; }
 
 a {
-  color: #00b0e9;
+  color: #4d6275;
   text-decoration: none;
   -webkit-transition: 100ms;
   -moz-transition: 100ms;
   -o-transition: 100ms;
   transition: 100ms; }
+  a:hover, a:focus, a:active {
+    color: #394856; }
 
 a:hover {
   color: #008dba; }
@@ -45,22 +48,28 @@ a:active {
 /* 
  * Header
  */
-.header a {
-  color: #313131; }
-
-.header a:hover {
-  color: #6e6e6e; }
-
-.header a:active {
-  top: 0px; }
+.header {
+  background-color: #F8F8F8; }
+  .header:first-child {
+    padding-top: 2em; }
+  .header a {
+    color: #435565; }
+    .header a:hover, .header a:focus, .header a:active {
+      color: #576f84; }
 
 /* Logo */
 .logo {
+  margin-top: 0;
   text-align: center;
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   font-size: 2em;
-  font-weight: 300;
-  color: #313131; }
+  letter-spacing: 0.035em;
+  font-weight: 400;
+  color: #F8F8F8; }
+  .logo a {
+    color: #435565; }
+    .logo a:hover, .logo a:focus, .logo a:active {
+      color: #576f84; }
 
 /* Navigation */
 .navWrapper {
@@ -87,9 +96,6 @@ a:active {
  * Main Area
  */
 .about {
-  border-bottom: 1px solid #d8d8d8; }
-
-.main {
   border-bottom: 1px solid #d8d8d8; }
 
 /*
