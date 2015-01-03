@@ -165,11 +165,10 @@ h2, h3, h4, h5 {
 // themed
 
 body {
-
- 	
+	background-color: lighten($ci-color,60); 	
 }
 .header {
-	background-color: $ci-color;
+	background-color: lighten($ci-color,60);
 	background-image: linear-gradient(to bottom,lighten($ci-color,60),$lightgrey);
  	a {
  		color: lighten($ci-color, 5);
@@ -194,7 +193,7 @@ h1 {
  	color: $ci-color;
 }
 h2,h3, .footer h3  {
-	color: lighten($ci-color,20);
+	color: lighten($ci-color,10);
 }
 a {
 	color: lighten($ci-color,10);
@@ -203,4 +202,12 @@ a {
 	&:active {
 		color: $ci-color;
 	}
+}
+.main {
+	border-bottom: none;
+	background-color: $lightgrey;
+}
+.footer {
+	background-color: lighten($ci-color,60);
+	background-image: linear-gradient(to top,lighten($ci-color,60),$lightgrey);
 }
