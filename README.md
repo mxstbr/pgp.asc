@@ -20,7 +20,7 @@ or
 
 	<link href="https://yoururl.com/pgp.asc" rel="publickey" type="text/plain">
 
-(see [Rel-publickey and Rel-pgpkey Specification](https://xato.net/cryptography/rel-publickey-rel-pgpkey/#.VKe984HGKrU) for more details)
+(see `rel="publickey"` and `rel="pgpkey"` [Specification](https://xato.net/cryptography/rel-publickey-rel-pgpkey/#.VKe984HGKrU) for more details)
 
 ## Why should I?
 
@@ -36,7 +36,18 @@ Right now, the primary goals are to get the website up and running and to work o
 
 First of all, awesome that you want to help!
 
-We basically need help with everything, ranging from Front-End and Design over Back-end to Copywriting. If you think you can provide something, feel free to discuss it in the issues or simply fork and send a PR!
+We basically need help with everything, ranging from Front-End and Design over Back-end to Copywriting. Take a look at the Todo List below and submit a PR with your ideas! 
+
+### Todo List
+
+- [ ] Website
+	- [ ] Design, [Discussion](/../../issues/1)
+		- [ ] Color Scheme
+		- [ ] Sketches/Pictures? (similar to [humans.txt](http://humanstxt.org))
+	- [ ] Automated Hall of Fame, [Discussion](/../../issues/3)
+- [ ] Copywriting
+	- [ ] General Copy, [Discussion](/../../issues/2)
+	- [ ] PGP Guide for beginners, [Discussion](/../../issues/5)
 
 ### Website
 
