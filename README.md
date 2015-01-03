@@ -14,7 +14,12 @@ Make your public PGP key (please, please only your public key) available at:
 
 You can even go further and add a meta tag in your `<head>` to make the file even more discoverable:
 
-	<link href="https://yoururl.com/pgp.asc" rel="pgpkey">
+	<link href="https://yoururl.com/pgp.asc" rel="pgpkey" type="text/plain">
+
+or
+	<link href="https://yoururl.com/pgp.asc" rel="publickey" type="text/plain">
+
+(see [Rel-publickey and Rel-pgpkey Specification](https://xato.net/cryptography/rel-publickey-rel-pgpkey/#.VKe984HGKrU) for more details)
 
 ## Why should I?
 
