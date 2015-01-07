@@ -357,9 +357,6 @@ th {
 /*
  * Grid
  */
-/* ============================================ */
-/* This file has a mobile-to-desktop breakpoint */
-/* ============================================ */
 @media screen and (max-width: 400px) {
   @-ms-viewport {
     width: 320px; } }
@@ -1547,7 +1544,7 @@ h1 {
 
 h2, .footer h3, h4, h5 {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  color: #4d6275; }
+  color: #4c5a66; }
 
 section {
   padding-bottom: 20px;
@@ -1557,7 +1554,7 @@ section:first-child {
   padding-top: 0px; }
 
 a {
-  color: #4d6275;
+  color: #4c5a66;
   text-decoration: none;
   -webkit-transition: 100ms;
   -moz-transition: 100ms;
@@ -1581,9 +1578,9 @@ a:active {
   .header:first-child {
     padding-top: 2em; }
   .header a {
-    color: #435565; }
+    color: #42515e; }
     .header a:hover, .header a:focus, .header a:active {
-      color: #576f84; }
+      color: #56636f; }
 
 /* Logo */
 .logo {
@@ -1595,9 +1592,9 @@ a:active {
   font-weight: 400;
   color: #F8F8F8; }
   .logo a {
-    color: #435565; }
+    color: #42515e; }
     .logo a:hover, .logo a:focus, .logo a:active {
-      color: #576f84; }
+      color: #56636f; }
 
 /* Navigation */
 .navWrapper {
