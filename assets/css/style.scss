@@ -33,6 +33,26 @@ $monospace: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter
 	transition: $transition;
 }
 
+// Functions
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix($color, white, (100-$percentage));
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix($color, black, (100-$percentage));
+}
+
 /* 
  * General stuff
  */
@@ -51,7 +71,7 @@ h1 {
 
 h2, .footer h3, h4, h5 {
  	font-family: $monospace;
-	color: lighten($basecolor,10);
+	color: tint($basecolor,10);
 }
 
  section {
@@ -64,7 +84,7 @@ h2, .footer h3, h4, h5 {
  }
 
  a {
- 	color: lighten($basecolor,10);
+ 	color: tint($basecolor,10);
  	&:hover,
  	&:focus,
  	&:active {
@@ -93,11 +113,11 @@ h2, .footer h3, h4, h5 {
 		padding-top: 2em;
 	}
  	a {
- 		color: lighten($basecolor, 5);
+ 		color: tint($basecolor, 5);
  		&:hover,
  		&:focus,
  		&:active {
- 			color: lighten($basecolor,15);
+ 			color: tint($basecolor,15);
 	 	}
  	}
 }
@@ -113,11 +133,11 @@ h2, .footer h3, h4, h5 {
 	font-weight: 400;
 	color: $lightgrey;
 	a {
-		color: lighten($basecolor,5);
+		color: tint($basecolor,5);
 		&:hover,
 		&:focus,
 		&:active {
-			color: lighten($basecolor,15);
+			color: tint($basecolor,15);
 		}
 	}
 }
