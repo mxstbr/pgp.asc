@@ -1,5 +1,19 @@
 # `pgp.asc`
 
+## Table of Contents
+
+- [pgp.asc](#)
+	- [What is pgp.asc?](#)
+	- [Example](#)
+	- [Why should I?](#)
+	- [Goals?](#)
+	- [How can I help?](#)
+		- [Todo List](#)
+		- [Website](#)
+	- [FAQ](#)
+		- [Why not use key servers, keybase, the blockchain, DNS,...?](#)
+		- [How is this decentralized?](#)
+
 ## What is pgp.asc?
 
 pgp.asc is an initiative to decentralize public PGP keys, making it easier to get an up to date and authenticated key.
@@ -92,9 +106,9 @@ We want to have a section devoted to more elaborate techniques to protect yourse
 
 ### How is this decentralized?
 
-&gt; de·cen·tral·ize
+> de·cen·tral·ize
  
-&gt; To undergo redistribution or dispersal away from a central location or authority.
+> To undergo redistribution or dispersal away from a central location or authority.
 
 [Source](http://www.thefreedictionary.com/decentralized)
 
