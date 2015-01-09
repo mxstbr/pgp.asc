@@ -81,3 +81,21 @@ I think a "Hall of Fame" is a great idea to motivate people to upload a pgp.asc 
 #### Front-End
 
 As soon as basic design decisions are made, we can start coding it out. 
+
+## FAQ
+
+### Why not use key servers, keybase, the blockchain, DNS,...?
+
+We are not preaching against keyservers and services like keybase. You can (and should) still use those. pgp.asc should be seen as an add-on to the currently available options, and my (mstoiber) personal goal is that we someday have mailto: links with somekind of attribute, and I don't even have to search for your key anymore when I click on your link.
+
+We want to have a section devoted to more elaborate techniques to protect yourself, the surrounding elements of PGP, e.g. MITM attacks, open networks in general, pre-used PCs, etc. (Stuff that Curtis Wallens brilliant [guide to PGP](http://curtiswallen.com/pgp) touches on.) There will hopefully also be a section devoted to different, more elaborate, methods of distributing your key (or the location of your key), e.g. namecoin, [DNS](http://www.gushi.org/make-dns-cert/HOWTO.html), etc.
+
+### How is this decentralized?
+
+&gt; de·cen·tral·ize
+ 
+&gt; To undergo redistribution or dispersal away from a central location or authority.
+
+[Source](http://www.thefreedictionary.com/decentralized)
+
+In this case the central location(s) would be the key servers, so this is decentralized, everybody hosting their own key.
