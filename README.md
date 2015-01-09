@@ -2,17 +2,17 @@
 
 ## Table of Contents
 
-- [pgp.asc](#)
-	- [What is pgp.asc?](#)
-	- [Example](#)
-	- [Why should I?](#)
-	- [Goals?](#)
-	- [How can I help?](#)
-		- [Todo List](#)
-		- [Website](#)
-	- [FAQ](#)
-		- [Why not use key servers, keybase, the blockchain, DNS,...?](#)
-		- [How is this decentralized?](#)
+- [pgp.asc](#pgpasc)
+	- [What is pgp.asc?](#what-is-pgpasc)
+	- [Example](#example)
+	- [Why should I?](#why-should-i)
+	- [Goals?](#goals)
+	- [How can I help?](#how-can-i-help)
+		- [Todo List](#todo-list)
+		- [Website](#website)
+	- [FAQ](#faq)
+		- [Why not use key servers, keybase, the blockchain, DNS,...?](#why-not-use-key-servers-keybase-the-blockchain-dns)
+		- [How is this decentralized?](#how-is-this-decentralized)
 
 ## What is pgp.asc?
 
