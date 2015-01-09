@@ -1554,14 +1554,16 @@ section:first-child {
   padding-top: 0px; }
 
 a {
-  color: #4c5a66;
+  color: #889199;
   text-decoration: none;
   -webkit-transition: 100ms;
   -moz-transition: 100ms;
   -o-transition: 100ms;
   transition: 100ms; }
+  a:visited {
+    color: #889199; }
   a:hover, a:focus, a:active {
-    color: #394856; }
+    color: #747e88; }
 
 a:hover {
   color: #008dba; }

@@ -84,11 +84,14 @@ h2, .footer h3, h4, h5 {
  }
 
  a {
- 	color: tint($basecolor,10);
+ 	color: tint($basecolor,40);
+ 	&:visited {
+ 		color: tint($basecolor,40);
+ 	}
  	&:hover,
  	&:focus,
  	&:active {
- 		color: $basecolor;
+ 		color: tint($basecolor,30);
  	}
  	text-decoration: none;
  	@include transition(100ms);
