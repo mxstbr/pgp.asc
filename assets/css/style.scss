@@ -10,29 +10,6 @@
 
 @import "partials/unsemantic-grid-responsive";
 
-// Colors
-
-$darkblue: #008dba;
-$black: #313131;
-$grey: #6e6e6e;
-$lightgrey: #F8F8F8;
-$basecolor: #394856;
-
-// Typography
-
-$sans: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
-$serif: Georgia, Times, 'Times New Roman', serif;
-$monospace: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-
-// Mixins
-
-@mixin transition($transition) {
-	-webkit-transition: $transition;
-	-moz-transition: $transition;
-	-o-transition: $transition;
-	transition: $transition;
-}
-
 // Functions
 
 /// Slightly lighten a color
@@ -53,12 +30,35 @@ $monospace: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter
   @return mix($color, black, (100-$percentage));
 }
 
+// Colors
+
+$darkblue: #008dba;
+$black: #313131;
+$grey: #6e6e6e;
+$basecolor: #394856;
+$backgroundcolor: tint($basecolor, 96);
+
+// Typography
+
+$sans: 'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Geneva,Verdana,sans-serif;
+$serif: Georgia, Times, 'Times New Roman', serif;
+$monospace: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+
+// Mixins
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
 /* 
  * General stuff
  */
 
 body {
-	background-color: $lightgrey;
+	background-color: $backgroundcolor;
 	color: $black;
 	font-family: $sans;
 }
@@ -108,7 +108,7 @@ h2, .footer h3, h4, h5 {
  */
 
 .header {
-	background-color: $lightgrey;
+	background-color: $backgroundcolor;
 	&:first-child {
 		padding-top: 2em;
 	}
@@ -131,7 +131,7 @@ h2, .footer h3, h4, h5 {
 	font-size: 2em;
 	letter-spacing: 0.035em;
 	font-weight: 400;
-	color: $lightgrey;
+	color: $backgroundcolor;
 	a {
 		color: tint($basecolor,5);
 		&:hover,

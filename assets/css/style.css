@@ -1533,7 +1533,7 @@ th {
  * General stuff
  */
 body {
-  background-color: #F8F8F8;
+  background-color: #f7f7f8;
   color: #313131;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; }
 
@@ -1574,7 +1574,7 @@ a:active {
  * Header
  */
 .header {
-  background-color: #F8F8F8; }
+  background-color: #f7f7f8; }
   .header:first-child {
     padding-top: 2em; }
   .header a {
@@ -1590,7 +1590,7 @@ a:active {
   font-size: 2em;
   letter-spacing: 0.035em;
   font-weight: 400;
-  color: #F8F8F8; }
+  color: #f7f7f8; }
   .logo a {
     color: #42515e; }
     .logo a:hover, .logo a:focus, .logo a:active {
