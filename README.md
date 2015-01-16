@@ -13,7 +13,7 @@
 	- [FAQ](#faq)
 		- [Why not use key servers, keybase, the blockchain, DNS,...?](#why-not-use-key-servers-keybase-the-blockchain-dns)
 		- [How is this decentralized?](#how-is-this-decentralized)
-    - [Why should my website serve pgp.asc with HTTPS?](#why-should-my-website-serve-pgp.asc-with-https)
+		- [Why should my website serve pgp.asc with HTTPS?](#why-should-my-website-serve-pgpasc-with-https)
 
 ## What is pgp.asc?
 
@@ -27,7 +27,7 @@ Make your public PGP key (please, please only your public key) available at:
 
 	https://yoururl.com/pgp.asc
 
-Note that HTTPS is used here. This is [important](#why-should-my-website-serve-pgp.asc-with-https).
+Note that HTTPS is used here. This is [important](#why-should-my-website-serve-pgpasc-with-https).
 
 You can even go further and add a meta tag in your `<head>` to make the file even more discoverable:
 
