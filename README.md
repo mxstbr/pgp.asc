@@ -13,6 +13,7 @@
 	- [FAQ](#faq)
 		- [Why not use key servers, keybase, the blockchain, DNS,...?](#why-not-use-key-servers-keybase-the-blockchain-dns)
 		- [How is this decentralized?](#how-is-this-decentralized)
+		- [Why should my website serve pgp.asc with HTTPS?](#why-should-my-website-serve-pgpasc-with-https)
 
 ## What is pgp.asc?
 
@@ -25,6 +26,8 @@ Sounds complicated? It isn’t: Just upload your public PGP key to your websites
 Make your public PGP key (please, please only your public key) available at:
 
 	https://yoururl.com/pgp.asc
+
+Note that HTTPS is used here. This is [important](#why-should-my-website-serve-pgpasc-with-https).
 
 You can even go further and add a meta tag in your `<head>` to make the file even more discoverable:
 
@@ -107,9 +110,13 @@ We want to have a section devoted to more elaborate techniques to protect yourse
 ### How is this decentralized?
 
 > de·cen·tral·ize
- 
+
 > To undergo redistribution or dispersal away from a central location or authority.
 
 [Source](http://www.thefreedictionary.com/decentralized)
 
 In this case the central location(s) would be the key servers, so this is decentralized, everybody hosting their own key.
+
+### Why should my website serve `pgp.asc` with HTTPS?
+
+To protect against [man-in-the-middle attacks](http://en.wikipedia.org/wiki/Man-in-the-middle_attack). A malicious user intercepting an incoming HTTP request for your key could instead serve a key of their own. It's good general practice to validate a user's PGP fingerprint out-of-band to ensure that the key you have for them is authentic.
