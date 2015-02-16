@@ -27,7 +27,7 @@ class PersonsController < ApplicationController
 
   def halloffame
     @person = Person.new
-    @persons = Person.all
+    @persons = Person.all.where(confirmed: 'true')
   end
 
   def pgpguide
