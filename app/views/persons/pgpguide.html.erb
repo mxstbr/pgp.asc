@@ -1,0 +1,240 @@
+<!-- Header -->
+<section class="header">
+	<!-- Navigation -->
+	<a href="index.html" id="icon">
+		<img src="assets/icon_maze_key.svg" alt="pgp.asc logo"></img>
+	</a>
+	<nav class="clearfix">
+		<ul class="nav clearfix">
+			<a href="<%= root_path %>" class="nav__item"><li>Home</li></a>
+			<a href="<%= halloffame_path %>" class="nav__item"><li>Hall of Fame</li></a>
+			<a href="<%= pgpguide_path %>" class="nav__item"><li class=" nav__item--active">PGP Guide</li></a>
+		</ul>
+		<a href="#" id="pull"></a>
+	</nav>
+	<!-- End of Navigation -->
+	
+	<img src="/assets/icon_maze_key.svg" alt="pgp.asc logo" class="header__logo" id="logo"></img>
+	<h1 class="header__heading">pgp.asc</h1>
+	<h2 class="header__subheading">Decentralize public PGP keys</h2>
+
+	<a href="#content" class="header__arrow"><img src="/assets/button_further.svg" class="header__arrow"></img></a>
+</section>
+<!-- End of Header -->
+
+<!-- Content -->
+<section class="content" id="content">
+	<div class="content--long">
+		<h2>Introduction to E-Mail Encryption</h2>
+
+		<h3>Why encrypt your mails?</h3>
+
+		<p>If you are on vacation you might send a picture postcard to a friend or family member with a quick "wish you were here" sort of message. But, if you are writing a personal letter to that same friend or family member you would be more inclined to seal it in an envelope.</p>
+
+		<p>If you are mailing a check to pay a bill or perhaps a letter telling a friend or family member that the extra key to your house is hidden under the large rock to the left of the back porch you might use a security envelope with hatched lines to obfuscate or hide the contents of the envelope even better. The post office offers a number of other means of tracking messages- sending the letter certified, asking for a return receipt, insuring the contents of a package, etc.</p>
+
+		<p>Why then would you send personal or confidential information in an unprotected email? Sending information like the location of your extra house key under the large rock to the left of the back porch in an unencrypted email is the equivalent of writing it on a postcard for all to see.</p>
+
+		<p>Encrypting your email will keep all but the most dedicated hackers from intercepting and reading your private communications.</p>
+
+		<h3>How does it work?</h3>
+
+		<p>The way PGP (Pretty Good Privacy, the standard we are going to use) works is that you have a public key and a private key (this sort of encryption is also known as Public Key Infrastructure or PKI). You, and only you, will have and use your private key. Your public key is handed out to anyone you choose or even made publicly available.</p>
+
+		<h4>Keys</h4>
+
+		<p>If someone wants to send you a message that is meant only for you to see, they would encrypt it using your public key. Your private key is required to decrypt such a message, so even if someone intercepted the email it would be useless gibberish to them. </p>
+
+		<p>It is important to note that you should encrypt all of your messages, not just the confidential or sensitive ones. If you only encrypt a single email message because it contains your credit card information and an attacker is intercepting your email traffic they will see that 99% of your email is unencrypted plain-text, and one message is encrypted. That is like attaching a bright red neon sign that says "Hack Me" to the message.</p>
+
+		<p>If you encrypt all of your messages it would be a much more daunting task for even a dedicated attacker to sift through. After investing the time and effort into decrypting 50 messages that just say "Happy Birthday" or "Do you want to golf this weekend?" or "Yes, I agree" the attacker will most likely not waste any more time on your email.</p>
+
+		<h2>How do I get started?</h2>
+
+		<section class="tabs">
+			<ul class="tabs-nav">
+				<li class="nav-item active" id="tab-1"><a href="#osx" class="nav-item-link">OS X</a></li>
+				<li class="nav-item" id="tab-2"><a href="#windows" class="nav-item-link">Windows</a></li>
+				<li class="nav-item" id="tab-3"><a href="#linux" class="nav-item-link">Linux</a></li>
+			</ul>
+			<div class="clear-shadow"></div>
+		    <div class="content">
+		        <div id="osx">
+		           
+						<h3>Step 1: Install the GPGTools GPG Suite for OS X</h3>
+
+						<p>Visit the <a href="https://gpgtools.org">GPGTools website</a> and download the GPG Suite for OS X. Once downloaded, mount the DMG and click on "Install". Inside the installer, you can stick with all default parameters, except for the "Installation Type". On the "Installation Type" screen, press "Customize" and uncheck the GPGMail package.</p>
+
+						<h3>Step 2: Creating your very own PGP key</h3>
+
+						<p>When the installer completes, a new app called "GPG Keychain Access" will launch. A small window will pop up and say: "GPG Keychain Access would like to access your contacts." Press "OK." As soon as you press "OK," a second window will pop up that says "Generate a new key pair." Type in your name and your email address. Also, check the box that says "Upload public key after generation." Expand the "Advanced options" section. Increase the key length to 4096, reduce the "Expiration date" to 1 year from today. Press "Generate key." As soon as you press "Generate key," the "Enter passphrase" window will pop up.</p>
+
+						<h4>A brief word about your passphrase</h4>
+
+						<p>The entire PGP encryption will rest on your passphrase. So, first and foremost, don't use a passphrase that other people know! Pick something only you will know, and others can't guess. And once you have a passphrase selected, don't give it to other people. <br>
+						Second, do not use a password, but rather a passphrase -- a sentence. For example, "Pennstate55" is less preferable than "I graduated from Penn State in 1955, ya heard?!" The longer your passphrase, the better. Lastly, make sure your passphrase is something you can remember. Since it is long, there is a tendency you might forget it. Don't. The consequences to that will be dire. Make sure you can remember your passphrase.</p>
+
+						<h3>Back to Step 2</h3>
+
+						<p>Once you decide on your passphrase, type it in the "Enter passphrase" window. Turn on the "Show typing" option, so you can be 100% sure that you've typed in your passphrase without any spelling errors. When everything looks good, press "OK". You will be asked to reenter the passphrase. Do it, and press "OK". You will then see a message saying, "We need to generate a lot of random bytes..." Wait for it to complete. Et voilà, your PGP key pair is ready to use!<br></p>
+
+						<h3>Step 3: Set PGP keyboard shortcuts</h3>
+
+						<p>Next, you will set up four global keyboard shortcuts in OS X.<br>
+						Open System Preferences, select the "Keyboard" pane, and go to the "Shortucts" tab. On the left hand side, select "Services." Then, on the right, scroll down to the subsection "Text" and look for a bunch of entries that start with "OpenPGP:". Go through each OpenPGP entry, unchecking each one and deleting the keyboard shortcut.</p>
+
+						<p>Next, you will enable and set four shortcuts:</p>
+
+						<ul>
+						<li>Enable "OpenPGP: Decrypt" and set its shortcut to <code>⌃⌥⌘-</code> (i.e., control option command minus)</li>
+						<li>Enable "OpenPGP: Encrypt" and set its shortcut to <code>⌃⌥⌘=</code> (i.e., control option command equals)</li>
+						<li>Enable "OpenPGP: Sign" and set its shortcut to <code>⌃⌥⌘</code>[ (i.e., control option command open bracket)</li>
+						<li>Enable "OpenPGP: Verify" and set its shortcut to <code>⌃⌥⌘]</code> (i.e., control option command close bracket)</li>
+						</ul>
+
+						<p>That's it! You're done setting up PGP with OpenGPG on OS X!</p>
+
+						<h3>Step 4: Send and receive secure e-mails</h3>
+
+						<h4>Send</h4>
+
+						<p>Start off by writing your email, then open the GPG Keychain Access app. Press Command-F and type in the email address of the person you are sending your message to. This will search the public key server (a directory of PGP keys) for your friend's PGP key. (If your friend has more than one key, select his most recent one) You will receive a confirmation that your friend's key was successfully downloaded. You can press "Close". You will now see your friend's public key in your keychain, and you can quit GPG Keychain Access and return to writing the email. (You will only need to download your friend's public key once. After that, it will always be available in your keychain until the key expires.) Since you ticked "Upload public key after generation." in Step 2, your public key is now available in the same way!<br>
+						Select the entire body of the email and press <code>⌃⌥⌘=</code> to encrypt it. A window will pop up, asking you who the recipient is. Select the friend's public key you just downloaded, and press "OK". Your entire message is now encrypted! You can press "Send" safely.  </p>
+
+						<h4>Receive</h4>
+
+						<p>When you receive your encrypted answer, copy the entire body, from, and including, <code>-----BEGIN PGP MESSAGE---</code>, to, and including, <code>-----END PGP MESSAGE---</code>. Open your favorite text editor, and paste it. Now select the entire text, and press <code>⌃⌥⌘-</code> to decrypt the message. You will immediately be prompted for your PGP passphrase. Type it in and press "OK". You will now see the decrypted message!</p>
+
+						<h3>pgp.asc</h3>
+
+						<p>pgp.asc is an initiative to decentralize public PGP keys. Even though uploading your keys to a key server is a good idea, it doesn't provide 100% authenticity and you cannot delete old/invalid keys. By uploading your public PGP key in a <code>pgp.asc</code> file to the root of your server, it is easily found by going to <code>http://yoururl.com/pgp.asc</code>. This guarantees authenticity, since only you have access to your server, as well as currentness, because you can always overwrite the old key with a new one.</p>
+				
+		        </div>
+		        <div id="windows">
+		            
+						<h3>Step 1: Install Windows Privacy Trey</h3>
+
+						<p>Visit the <a href="http://winpt.wald.intevation.org/">WinPT website</a> and download the latest binary version. Run the installer by double clicking the .exe file, and leave everything at default, except if you use a mail client. WinPT comes with plugins for several popular mail clients (e.g. Outlook), and you can install those by selecting them at the "Choose Components" Screen.</p>
+
+						<h3>Step 2: Creating your very own PGP key</h3>
+
+						<p>When you've finished installing WinPT, the program should start automatically. A warning will appear that it couldn't find any keyrings. Click "Continue", then select "Have WinPT generate a new key pair." Type in your name and your email address. Increase the key length to 4096, reduce the "Expiration date" to 1 year from today. You will then have to enter you passphrase. </p>
+
+						<h4>A brief word about your passphrase</h4>
+
+						<p>The entire PGP encryption will rest on your passphrase. So, first and foremost, don't use a passphrase that other people know! Pick something only you will know, and others can't guess. And once you have a passphrase selected, don't give it to other people. <br>
+						Second, do not use a password, but rather a passphrase -- a sentence. For example, "Pennstate55" is less preferable than "I graduated from Penn State in 1955, ya heard?!" The longer your passphrase, the better. Lastly, make sure your passphrase is something you can remember. Since it is long, there is a tendency you might forget it. Don't. The consequences to that will be dire. Make sure you can remember your passphrase.</p>
+
+						<h3>Back to Step 2</h3>
+
+						<p>Once you decide on your passphrase, press "Start" to generate your key pair. (This could take a while depending on your hardware.) Wait for it to complete. Et voilà, your PGP key pair is ready to use!</p>
+
+						<h3>Step 3: Send and receive secure e-mails</h3>
+
+						<h4>Send</h4>
+
+						<p>Start off by writing your email, then right click on the WinPT task bar and choose "Key Manager", then the "Key Server" menu. Select a key server near you and search for the e-mail of the friend you want to send the message to. Select the key that you want to add and click "Receive." (If your friend has more than one key, select his most recent one) You will now see your friend's public key in your Key Manager, and you can return to writing the email. (You will only need to download your friend's public key once. After that, it will always be available in your Key Manager until the key expires.)<br>
+						Select the entire body of the email and press <code>SHIFT-CTRL-E</code> ("E" like encrypt) to encrypt it. WinPT will prompt you to select the key of the person you want to send it to. Select the person and you are done, your email is now encrypted! You can press "Send" safely.  </p>
+
+						<h4>Receive</h4>
+
+						<p>When you receive your encrypted answer, press <code>SHIFT-CTRL-D</code> ("D" like decrypt) to decrypt the message. Enter your passphrase when prompted, and assuming that it was encrypted with your public key, WinPT will use your private key to decrypt the e-mail. Congratulations, you just had your first encrypted conversation!</p>
+
+						<h3>Uploading your key to public key servers</h3>
+
+						<h3>pgp.asc</h3>
+
+						<p>pgp.asc is an initiative to decentralize public PGP keys. Even though uploading your keys to a key server is a good idea, it doesn't provide 100% authenticity and you cannot delete old/invalid keys. By uploading your public PGP key in a <code>pgp.asc</code> file to the root of your server, it is easily found by going to <code>http://yoururl.com/pgp.asc</code>. This guarantees authenticity, since only you have access to your server, as well as currentness, because you can always overwrite the old key with a new one.</p>
+				
+		        </div>
+		        <div id="linux">
+		          
+						<h3>Step 1: Install GnuPG</h3>
+
+						<p>Either visit the <a href="https://www.gnupg.org/">GnuPG website</a> and download the latest version, or install gnupg via the command line. (E.g. for Debian based systems the command would be <code>apt-get install gnupg</code>)</p>
+
+						<h3>Step 2: Creating your first key pair</h3>
+
+						<p>Run <code>gpg --gen-key</code>, and choose the <code>RSA and RSA</code> option. (or simply press <code>ENTER</code>, it is the default option) Set the key size to <code>4096</code> and then set the validity to one year by entering <code>1y</code>. Type in your name and your email address, and then you'll be asked for a passphrase.</p>
+
+						<h4>A brief word about your passphrase</h4>
+
+						<p>The entire PGP encryption will rest on your passphrase. So, first and foremost, don't use a passphrase that other people know! Pick something only you will know, and others can't guess. And once you have a passphrase selected, don't give it to other people. <br>
+						Second, do not use a password, but rather a passphrase -- a sentence. For example, "Pennstate55" is less preferable than "I graduated from Penn State in 1955, ya heard?!" The longer your passphrase, the better. Lastly, make sure your passphrase is something you can remember. Since it is long, there is a tendency you might forget it. Don't. The consequences to that will be dire. Make sure you can remember your passphrase.</p>
+
+						<h3>Back to Step 2</h3>
+
+						<p>Once you decide on your passphrase, type it in. You will then see a message saying, "We need to generate a lot of random bytes..." Wait for it to complete. Et voilà, your PGP key pair is ready to use!</p>
+
+						<h3>Step 3: Send and receive secure e-mails</h3>
+
+						<h4>Send</h4>
+
+						<p>Start off by writing your email, then go to a key server (like <a href="http://pgp.mit.edu">http://pgp.mit.edu</a>) and search for your friends e-mail. Download his most recent public key, and import it with <code>gpg --import key.asc</code>. You will now see your friend's public key listed under <code>gpg --list-keys</code>, and you can return to writing the email. (You will only need to download your friend's public key once. After that, it will always be available in your keychain until the key expires.)<br>
+						Encrypt your mail by entering <code>gpg --output mail.gpg --encrypt --recipient friend@hisurl.com mail</code>. Your e-mail is now encrypted, and you can send it safely.  </p>
+
+						<h4>Recieve</h4>
+
+						<p>When you receive your encrypted answer, enter <code>gpg --output mail --decrypt mail.gpg</code> to decrypt the message. Enter your passphrase when prompted, and assuming that it was encrypted with your public key, GnuPG will use your private key to decrypt the e-mail. Congratulations, you just had your first encrypted conversation!</p>
+
+						<h3>Uploading your key to public key servers</h3>
+
+						<p>Copy your entire public key, from, and including, <code>-----BEGIN PGP PUBLIC KEY BLOCK-----</code> to, and including, <code>-----END PGP PUBLIC KEY BLOCK-----</code>. Open a key server of your choice (e.g. <a href="http://pgp.mit.edu">http://pgp.mit.edu</a>) and simply paste your key in the designated form field. Congratulations, your key is now available to everybody!</p>
+
+						<h3>pgp.asc</h3>
+
+						<p>pgp.asc is an initiative to decentralize public PGP keys. Even though uploading your keys to a key server is a good idea, it doesn't provide 100% authenticity and you cannot delete old/invalid keys. By uploading your public PGP key in a <code>pgp.asc</code> file to the root of your server, it is easily found by going to <code>http://yoururl.com/pgp.asc</code>. This guarantees authenticity, since only you have access to your server, as well as currentness, because you can always overwrite the old key with a new one.</p>
+				
+		        </div>
+		    </div>
+		</section>
+	</div>
+</section>
+<!-- End of Content -->
+
+<!-- Footer -->
+<section class="footer">
+	<div class="wrapper">
+		<div class="footer__section">
+			<h4 class="footer__heading">Are you using pgp.asc?</h4>
+			<p class="footer__text">Awesome! Submit your site below:</p>
+			<!-- Form -->
+			<%= form_for @person, url: persons_path, html: {class: "footer--form"} do |f| %>
+			  <%= f.text_field :name, class: "footer__form--input", placeholder: "Your name" %>
+				<%= f.text_field :url, class: "footer__form--input", placeholder: "Your website" %>
+				<%= f.text_field :mail, class: "footer__form--input", placeholder: "Your email" %>
+			  <%= f.submit "", class: "footer__form--submit-button", type: "image", src: "assets/button_submit.png" %>
+			<% end %>
+			<!-- End of Form -->
+		</div>
+		<div class="footer__section footer__section--social">
+			<h4 class="footer_heading">Social Links</h4>
+			<a href="https://github.com/mstoiber/pgp.asc"><div class="social__github"></div></a>
+			<a href="https://twitter.com/mstoiber05"><div class="social__twitter"></div></a>
+			<a href="#"><div class="social__fb"></div></a>
+		</div>
+		<div class="footer__section footer__section--contribute">
+			<h4 class="footer__heading">Contribute</h4>
+			<p class="footer__text">Head over to <a href="https://github.com/mstoiber/pgp.asc">GitHub</a> to join the discussion!</p>
+		</div>
+	</div>
+</section>
+
+<!-- Google Analytics -->
+<script>
+(function(b,o,i,l,e,r) {
+	b.GoogleAnalyticsObject = l;
+	b[l] || (b[l] =
+		function() {
+			(b[l].q = b[l].q || []).push(arguments)
+		});
+	b[l].l = +new Date;
+	e = o.createElement(i);
+	r = o.getElementsByTagName(i)[0];
+	e.src = '//www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e, r)
+}(window, document, 'script', 'ga'));
+ga('create', 'UA-49258834-2', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+</script>

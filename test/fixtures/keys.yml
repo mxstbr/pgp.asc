@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valid_until: 2015-02-13 14:52:07
+  deleted: false
+  confirm_hash: MyString
+  confirmed: false
+
+two:
+  valid_until: 2015-02-13 14:52:07
+  deleted: false
+  confirm_hash: MyString
+  confirmed: false

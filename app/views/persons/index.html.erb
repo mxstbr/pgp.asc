@@ -1,0 +1,92 @@
+<!-- Header -->
+<section class="header">
+	<!-- Navigation -->
+	<a href="index.html" id="icon">
+		<img src="assets/icon_maze_key.svg" alt="pgp.asc logo"></img>
+	</a>
+	<nav class="clearfix">
+		<ul class="nav clearfix">
+			<a href="<%= root_path %>" class="nav__item"><li class=" nav__item--active">Home</li></a>
+			<a href="<%= halloffame_path %>" class="nav__item"><li>Hall of Fame</li></a>
+			<a href="<%= pgpguide_path %>" class="nav__item"><li>PGP Guide</li></a>
+		</ul>
+		<a href="#" id="pull"></a>
+	</nav>
+	<!-- End of Navigation -->
+	
+	<img src="/assets/icon_maze_key.svg" alt="pgp.asc logo" class="header__logo" id="logo"></img>
+	<h1 class="header__heading">pgp.asc</h1>
+	<h2 class="header__subheading">Decentralize public PGP keys</h2>
+
+	<a href="#content" class="header__arrow"><img src="/assets/button_further.svg" class="header__arrow"></img></a>
+</section>
+<!-- End of Header -->
+
+<!-- Content -->
+<section class="content" id="content">
+	<div class="content__section group">
+		<img src="/assets/icon_maze_key.svg" alt="Hexagonal Maze with a key in the middle" class="content__hex"></img>
+		<h3 class="content__heading">What is pgp.asc?</h3>
+		<p class="content__text">pgp.asc is an initiative to decentralize public PGP keys, making it easier to get an up to date and authenticated key.</p> 
+		<p class="content__text">Sounds complicated? It isn’t: Just upload your public PGP key to your websites root folder and you’re good to go!</p>
+	</div>
+	<div class="content__section group">
+		<img src="/assets/icon_maze_folder.svg" alt="Hexagonal Maze with a folder in the middle" class="content__hex"></img>
+		<h3 class="content__heading">How and where?</h3>
+		<p class="content__text">Simply put your public key in a file called pgp.asc in the root of your server. That way people can find your PGP key by going to https://url.com/pgp.asc.</p>
+		<p class="content__text">This takes less time than to search in a public key server, and absolutely guarantees authenticity.</p>
+	</div>
+	<div class="content__section group">
+		<img src="/assets/icon_maze_question.svg" alt="Hexagonal Maze with a question mark in the middle" class="content__hex"></img>
+		<h3 class="content__heading">Why should I?</h3>
+		<p class="content__text">To make it easier to find your public PGP key, and validate it. (Since only you have access to your server) To provide an up to date key, as you can delete your old one. To spread the word about encryption.</p>
+	</div>
+</section>
+<!-- End of Content -->
+
+<!-- Footer -->
+<section class="footer">
+	<div class="wrapper">
+		<div class="footer__section">
+			<h4 class="footer__heading">Are you using pgp.asc?</h4>
+			<p class="footer__text">Awesome! Submit your site below:</p>
+			<!-- Form -->
+			<%= form_for @person, url: persons_path, html: {class: "footer--form"} do |f| %>
+			  <%= f.text_field :name, class: "footer__form--input", placeholder: "Your name" %>
+				<%= f.text_field :url, class: "footer__form--input", placeholder: "Your website" %>
+				<%= f.text_field :mail, class: "footer__form--input", placeholder: "Your email" %>
+			  <%= f.submit "", class: "footer__form--submit-button", type: "image", src: "assets/button_submit.png" %>
+			<% end %>
+			<!-- End of Form -->
+		</div>
+		<div class="footer__section footer__section--social">
+			<h4 class="footer_heading">Social Links</h4>
+			<a href="https://github.com/mstoiber/pgp.asc"><div class="social__github"></div></a>
+			<a href="https://twitter.com/mstoiber05"><div class="social__twitter"></div></a>
+			<a href="#"><div class="social__fb"></div></a>
+		</div>
+		<div class="footer__section footer__section--contribute">
+			<h4 class="footer__heading">Contribute</h4>
+			<p class="footer__text">Head over to <a href="https://github.com/mstoiber/pgp.asc">GitHub</a> to join the discussion!</p>
+		</div>
+	</div>
+</section>
+
+<!-- Google Analytics -->
+<script>
+(function(b,o,i,l,e,r) {
+	b.GoogleAnalyticsObject = l;
+	b[l] || (b[l] =
+		function() {
+			(b[l].q = b[l].q || []).push(arguments)
+		});
+	b[l].l = +new Date;
+	e = o.createElement(i);
+	r = o.getElementsByTagName(i)[0];
+	e.src = '//www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e, r)
+}(window, document, 'script', 'ga'));
+ga('create', 'UA-49258834-2', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+</script>

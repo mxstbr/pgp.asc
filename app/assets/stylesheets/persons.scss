@@ -1,0 +1,507 @@
+// Place all the styles related to the persons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bourbon";
+
+// Variables
+
+$basecolor: #81ddb9;
+$oppositecolor: #DD9081;
+$dark-background-color: #1b1b1b;
+$grey: #888888;
+
+$max-width: 818px; // 818px
+$max-height: 870px;
+
+// Mixins
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@include keyframes(fadeInOut) {
+	0% {
+        opacity: 0;
+        top: -5em;
+    }
+
+    20% {
+        opacity: 1;
+        top: 0;
+    }
+
+    80% {
+        opacity: 1;
+        top: 0;
+    }
+
+    100% {
+        opacity: 0;
+        top: -5em;
+    }
+}
+
+// Clearfix
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+
+.group:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+	}
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
+//
+// Basics
+//
+
+body {
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Merriweather', Georgia, serif;
+}
+
+a {
+	font-style: italic;
+	text-decoration: none;
+	color: $basecolor;
+	font-weight: 300;
+}
+
+a:hover {
+	@include transition(all, 100ms, ease-in-out);
+}
+
+code {
+ 	padding: 0.2em;
+ 	margin: 0;
+ 	font-size:85%;
+ 	background-color: rgba(0,0,0,0.04);
+ 	border-radius: 3px;
+}
+
+p {
+	line-height: 1.7em;
+	letter-spacing: 0.03em;
+}
+
+//
+// Alerts
+//
+
+.alert {
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	opacity: 0;
+	z-index: 2;
+	@include animation(fadeInOut 2.5s);
+	@include animation-delay(300ms); // Otherwise animation would be stuttery at the beginning
+}
+
+.alert-success {
+	border: 1px solid $basecolor;
+	background-color: $basecolor;
+}
+
+.alert-error {
+	border: 1px solid $oppositecolor;
+	background-color: $oppositecolor;
+	color: white;
+}
+
+//
+// Header
+//
+
+.header {
+	height: 100vh;
+	width: 100vw;
+	border-top: 0.5vh solid $basecolor;
+	background-color: $dark-background-color;
+	color: white;
+}
+
+.header__logo {
+	margin: 0 auto;
+	margin-top: 25vh;
+	height: 20vh;
+	width: 100%; // IE fix for responsive SVGs
+}
+
+.header__heading {
+	text-align: center;
+	font-size: 80px;
+	margin: 0;
+}
+
+.header__subheading {
+	text-align: center;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 36px;
+	margin-top: 0;
+}
+
+.header__arrow {
+	position: absolute;
+	bottom: 5%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	height: 5vh;
+}
+
+//
+// Navigation
+//
+
+nav {
+	width: 100%;
+	height: 3em;
+	margin-top: 18px;
+	position: relative;
+}
+
+.nav {
+	float: right;
+	margin-right: 5vw;
+	color: white;
+	margin-top: 0;
+	position: relative;
+	visibility: visible;
+}
+
+.nav a {
+	color: white;
+}
+
+.nav a:hover {
+	color: $basecolor;
+}
+
+.nav__item {
+	display: inline-block;
+	margin-right: 2em;
+	margin-top: 1em;
+	font-style: normal;
+}
+
+.nav__item--active {
+	color: $basecolor;
+}
+
+.nav__item li {
+	list-style: none
+}
+
+#pull {
+	display: none;
+}
+
+#icon {
+	display: block;
+}
+
+#icon img {
+	height: 2em;
+	position: absolute;
+	top: 1.8em;
+	left: 1.4em;
+}
+
+//
+// Content
+//
+
+.content {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 7.5vh 0;
+}
+
+.content__section {
+	padding: 2.5vh 0;
+}
+
+.content__hex {
+	width: 30%;
+	float: left;
+	vertical-align: middle;
+}
+
+.content__heading {
+	font-size: 30px;
+	width: 65%;
+	float: right;
+}
+
+.content__text {
+	width: 65%;
+	float: right;
+	margin-top: 0;
+}
+
+.content--long {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+//
+// Footer
+//
+
+.footer {
+	width: 100%;
+	display: inline-block;
+	background-color: $dark-background-color;
+	color: white;
+	padding: 5vh 0;
+}
+
+.wrapper {
+	max-width: $max-width;
+	margin: 0 auto;
+}
+
+.footer__section {
+	width: 30%;
+	float: left;
+	padding: 0 1.6666%;
+}
+
+.footer__heading {
+	font-size: 18px;
+}
+
+.footer__form--input {
+	clear: both;
+	margin: 2px 0;
+	background-color: $dark-background-color;
+	padding: 0.5em 1em;
+}
+
+input[type="text"] {
+	font-size: 14px;
+}
+
+.footer__form--submit-button {
+	padding-top: 4px;
+	border-color: $grey;
+}
+
+::-webkit-input-placeholder {
+   font-size: 14px;
+   font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-size: 14px;
+   font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size: 14px;
+   font-style: italic;
+}
+
+:-ms-input-placeholder {
+   font-size: 14px;
+   font-style: italic;
+}
+
+.social__github {
+	display: inline-block;
+	width: 68px;
+	height: 79px;
+	background-image: url("/assets/social_github.svg");
+}
+
+.social__github:hover {
+	background-image: url("/assets/social_github_hover.svg");
+}
+
+.social__twitter {
+	display: inline-block;
+	width: 68px;
+	height: 79px;
+	background-image: url("/assets/social_twitter.svg");
+}
+
+.social__twitter:hover {
+	background-image: url("/assets/social_twitter_hover.svg");
+}
+
+.social__fb {
+	display: inline-block;
+	width: 68px;
+	height: 79px;
+	background-image: url("/assets/social_fb.svg");
+}
+
+.social__fb:hover {
+	background-image: url("/assets/social_fb_hover.svg");
+}
+
+//
+// Media Queries
+//
+
+@media only screen and (max-width : 480px) {
+	nav {
+		height: 0;
+		margin-top: 13px;
+	}
+
+	.nav {
+		display: block;
+		visibility: hidden;
+		opacity: 0;
+		height: auto;
+		margin: 0 auto;
+		top: 41px; // Magic number
+		position: absolute;
+		padding: 0;
+		transition: visibility linear 100ms,opacity 100ms linear;
+	}
+
+	.nav__item {
+		clear: both;
+		float: left;
+		text-align: center;
+		width: 100vw;
+		margin: 0;
+		background-color: #232323;
+	}
+
+	.nav__item li {
+		width: 90%;
+		border-bottom:1px solid #1a5f4e;
+		margin: 0 auto;
+		padding: 1em 0;
+	}
+
+	.nav__item:last-child li {
+		border: none;
+	}
+
+	nav a#pull {
+		display: block;
+		width: 100%;
+		position: relative;
+	}
+
+	nav a#pull:after {
+		content:"";
+		background: url('/assets/icon_hamburger.svg') no-repeat;
+		width: 26px;
+		height: 17px;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 5px;
+	}
+
+	#icon img {
+		top: 11px;
+		left: 11px;
+	}
+}
+
+
+@media screen and (max-width: $max-width) {
+
+	.content {
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+
+	.content__section {
+		clear: both;
+	}
+
+	.content__hex {
+		display: block;
+		margin: 0 auto;
+		float: none;
+		width: 10em;
+	}
+
+	.content__heading {
+		width: 100%;
+		text-align: center;
+	}
+
+	.content__text {
+		width: 90%;
+		float: none;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.footer__form {
+		width: 90%;
+		display: inline-block;
+	}
+
+	.footer__section {
+		float: none;
+		margin: 0 2vw;
+		width: 94%;
+	}
+
+	.footer__form--input {
+		display: block;
+		width: 100%;
+	}
+
+	.footer__form--submit-button {
+		float: right;
+		margin-right: 4%;
+	}
+}
+
+@media screen and (max-height: $max-height) {
+	.header__logo {
+		margin-top: 15vh;
+	}
+
+	.header__heading {
+		font-size: 60px;
+	}
+
+	.header__subheading {
+		font-size:27px;
+	}
+
+	.header__arrow {
+		height: 10vh;
+	}
+}
