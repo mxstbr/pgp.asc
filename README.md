@@ -87,6 +87,14 @@ This assumes you have Ruby, Rails and all the needed utilities installed and a P
 
 - Run `rails server`, and go to `http://localhost:3000` to see the site! If you send an email through the form, you can find it at `http://127.0.0.1:1080/`. (This is mailcatcher, it literally catches the mails)
 
+#### Project Structure
+
+If you want to edit the frontend, ignore everything except the `app` folder. In there you should focus on the `assets` (Stylesheets, Scripts and Images) and the `views/persons` folder. (The actual HTML files you see)
+
+For the backend, all the important logic is in the Persons Controller (`app/controllers/persons_controller.rb`) and the Person Model. (`app/models/person.rb`)
+
+If you are looking for something but can't find it, contact me on [twitter](http://mxs.is/@).
+
 #### Target groups
 
 1) People who know and use PGP
