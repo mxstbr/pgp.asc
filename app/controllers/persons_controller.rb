@@ -8,6 +8,12 @@ class PersonsController < ApplicationController
   def create
     @person = Person.create(person_params)
 
+    if @person.save
+      flash[:success] = "Almost there #{@person.name}, check your mail!"
+    else
+      flash[:error] = "Something went wrong, did you enter the right URL?"
+    end
+
   	redirect_to root_path
   end
 
