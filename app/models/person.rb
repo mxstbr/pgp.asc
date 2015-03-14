@@ -4,8 +4,8 @@ class Person < ActiveRecord::Base
 	before_create :send_verification_email
 
 	# This method creates a random verification hash, checks that the hash is unique in the database,
-	# then sends the verification email
-	def send_verification_email
+	# then sends the verification email. Mode is either 'http' or 'https'
+	def send_verification_email(person = self, website_protocol = 'https://')
 		exists = true
 		# Generates a random, unique hash for every person
 		begin
@@ -13,23 +13,48 @@ class Person < ActiveRecord::Base
 		  if Person.exists?(:confirm_hash => random_hash)
 		    exists = true
 		  else
-		    self.confirm_hash = random_hash
-		    puts "======================================"
-		    puts random_hash
+		    person.confirm_hash = random_hash
 		    exists = false
 		  end
 		end while exists === true
 
-		# Checks if they actually have a key on their website
-		website = self.url.gsub(/\/$/, "") + "/pgp.asc"
-		encrypt = false
-		key = Curl.get(website).body_str
+		# Format the URL
+
+		# If no website_protocol was passed
+		if 	website_protocol.empty?
+			# Get the one from the URL
+			website_protocol = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/.match(person.url)[1]
+			# If the URL didn't have one
+			if 	website_protocol.empty?
+				# Set it to HTTPS
+				website_protocol = 'https://'
+			end
+		end
+
+		# Put together URL
+		website = website_protocol + /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/.match(person.url)[2] + '/pgp.asc'
+
+		# Get the key with a CURL request
+		request = Curl::Easy.new(website)
+		request.ssl_verify_peer = false
+	    puts "======================================"
+	    puts website
+		request.perform
+		# Slice the key from the HTML
+		key = request.body_str
+	    # Import the key
 		imported_key = GPGME::Key.import(key)
+		# If everything went right, send the email
 		if defined? imported_key.imports.first.fpr
 			fpr = imported_key.imports.first.fpr
 		else
+			# If it failed with HTTPS, try HTTP
+			if website_protocol == 'https://'
+				return send_verification_email(person, 'http://')
+			end
+			# Otherwise just show an error
 			return false
 		end
-		PersonMailer.verification_email(self, fpr).deliver_now
+		PersonMailer.verification_email(person, fpr).deliver_now
 	end
 end
