@@ -6,7 +6,7 @@
   <body>
     <h1>Welcome <%= @person.name %> to the pgp.asc Hall of Fame!</h1>
     <p>There is just one thing remaining before you can see your name in all its glory on http://pgpasc.org!</p>
-    <a href="localhost:3000/persons/<%= @person.id %>?ch=<%= @person.confirm_hash %>" class="button">Verify my entry!</a>
+    <a href="localhost:3000/persons?ch=<%= @person.confirm_hash %>" class="button">Verify my entry!</a>
     <p>You received this email because you filled out the form on http://pgpasc.org.</p>
   </body>
 </html>

@@ -37,8 +37,6 @@ class Person < ActiveRecord::Base
 		# Get the key with a CURL request
 		request = Curl::Easy.new(website)
 		request.ssl_verify_peer = false
-	    puts "======================================"
-	    puts website
 		request.perform
 		# Slice the key from the HTML
 		key = request.body_str
