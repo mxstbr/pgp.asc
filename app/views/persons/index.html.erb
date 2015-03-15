@@ -1,18 +1,6 @@
 <!-- Header -->
 <section class="header">
-	<!-- Navigation -->
-	<a href="index.html" id="icon">
-		<img src="/assets/icon_maze_key.svg" alt="pgp.asc logo"></img>
-	</a>
-	<nav class="clearfix">
-		<ul class="nav clearfix">
-			<a href="<%= root_path %>" class="nav__item"><li class=" nav__item--active">Home</li></a>
-			<a href="<%= halloffame_path %>" class="nav__item"><li>Hall of Fame</li></a>
-			<a href="<%= pgpguide_path %>" class="nav__item"><li>PGP Guide</li></a>
-		</ul>
-		<a href="#" id="pull"></a>
-	</nav>
-	<!-- End of Navigation -->
+	<%= render 'nav' %>
 	
 	<img src="/assets/icon_maze_key.svg" alt="pgp.asc logo" class="header__logo" id="logo"></img>
 	<h1 class="header__heading">pgp.asc</h1>

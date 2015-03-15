@@ -1,0 +1,19 @@
+<!-- Navigation -->
+<a href="index.html" id="icon">
+	<img src="assets/icon_maze_key.svg" alt="pgp.asc logo"></img>
+</a>
+<nav class="clearfix">
+	<ul class="nav clearfix">
+		<%= nav_link_to root_path, {:class => 'nav__item'}, {:selected_class => 'nav__item--active'} do %>
+			<li>Home</li>
+		<% end %>
+		<%= nav_link_to halloffame_path, {:class => 'nav__item'}, {:selected_class => 'nav__item--active'} do %>
+			<li>Hall of Fame</li>
+		<% end %>
+		<%= nav_link_to pgpguide_path, {:class => 'nav__item'}, {:selected_class => 'nav__item--active'} do %>
+			<li>PGP Guide</li>
+		<% end %>
+	</ul>
+	<a href="#" id="pull"></a>
+</nav>
+<!-- End of Navigation -->
