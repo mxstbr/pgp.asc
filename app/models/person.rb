@@ -62,7 +62,7 @@ class Person < ActiveRecord::Base
 			request = Curl::Easy.new(website)
 			request.ssl_verify_peer = false
 			request.perform
-		rescue Curl::Err::HostResolutionError => error
+		rescue Curl::Err::SSLPeerCertificateError, Curl::Err::HostResolutionError => error
 			# If the request fails, flash an error message
 			return false
 		end
