@@ -8,7 +8,7 @@ class Person < ActiveRecord::Base
 	def send_verification_email(person = self, website_protocol = 'https://')
 
 		puts '#########################################################'
-		puts 'send_verification_email(' + person + ', ' + website_protocol + ')'
+		puts 'send_verification_email'
 
 		website_regex = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/
 		exists = true
