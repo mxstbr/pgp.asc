@@ -28,6 +28,7 @@ gem 'mail-gpg'
 gem 'high_voltage', '~> 0.9.2'
 gem 'curb'
 gem 'nav_lynx'
+gem 'rails_12factor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
