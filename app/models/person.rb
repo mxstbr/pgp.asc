@@ -6,6 +6,10 @@ class Person < ActiveRecord::Base
 	# This method creates a random verification hash, checks that the hash is unique in the database,
 	# then sends the verification email. Mode is either 'http' or 'https'
 	def send_verification_email(person = self, website_protocol = 'https://')
+
+		puts '#########################################################'
+		puts 'send_verification_email(' + person + ', ' + website_protocol + ')'
+
 		website_regex = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/
 		exists = true
 		# Generates a random, unique hash for every person
@@ -69,6 +73,8 @@ class Person < ActiveRecord::Base
 		# If everything went right, send the email
 		if defined? imported_key.imports.first.fpr
 			fpr = imported_key.imports.first.fpr
+			puts '#########################################################'
+			puts 'send_verification_email, fpr is defined'
 		else
 			# If it failed with HTTPS, try HTTP
 			if website_protocol == 'https://'

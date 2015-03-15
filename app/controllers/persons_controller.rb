@@ -25,6 +25,9 @@ class PersonsController < ApplicationController
   def create
     @person = Person.create(person_params)
 
+    puts '#########################################################'
+    puts 'create action in persons_controller'
+
     # If nothing went wrong with the sending of the mail
     if @person.save
       flash[:success] = "Almost there #{@person.name}, check your mail!"
