@@ -6,6 +6,7 @@ class Person < ActiveRecord::Base
 	# This method creates a random verification hash, checks that the hash is unique in the database,
 	# then sends the verification email. Mode is either 'http' or 'https'
 	def send_verification_email(person = self, website_protocol = 'https://')
+		website_regex = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/
 		exists = true
 		# Generates a random, unique hash for every person
 		begin
@@ -23,7 +24,7 @@ class Person < ActiveRecord::Base
 		# If no website_protocol was passed
 		if 	website_protocol.empty?
 			# Get the one from the URL
-			website_protocol = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/.match(person.url)[1]
+			website_protocol = website_regex.match(person.url)[1]
 			# If the URL didn't have one
 			if 	website_protocol.empty?
 				# Set it to HTTPS
@@ -31,22 +32,36 @@ class Person < ActiveRecord::Base
 			end
 		end
 
-		# Put together URL
-		website = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/.match(person.url)[2]
+		# Get actual URL part, i.e. 'pgpasc.org' in 'http://pgpasc.org/halloffame.html'
+		website = website_regex.match(person.url)
+
+		# If the website was wrongly formatted
+		if website == nil
+			return false
+		else
+			# Otherwise get the URL
+			website = website_regex.match(person.url)[2]
+		end
+		# Set the current persons URL to that
 		person.url = website
 
+		# If a person with that URL already exists, show an error
 		if Person.exists?(:url => website) 
 			return false
 		end
 
+		# Put together website for CURL request
 		website = website_protocol + website + '/pgp.asc'
-		puts '##########################################'
-		puts website
 
 		# Get the key with a CURL request
-		request = Curl::Easy.new(website)
-		request.ssl_verify_peer = false
-		request.perform
+		begin
+			request = Curl::Easy.new(website)
+			request.ssl_verify_peer = false
+			request.perform
+		rescue Curl::Err::HostResolutionError => error
+			# If the request fails, flash an error message
+			return false
+		end
 		# Slice the key from the HTML
 		key = request.body_str
 	    # Import the key
