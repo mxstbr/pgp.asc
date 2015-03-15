@@ -27,7 +27,6 @@ gem 'bourbon'
 gem 'mail-gpg'
 gem 'high_voltage', '~> 0.9.2'
 gem 'curb'
-gem 'mailcatcher'
 gem 'nav_lynx'
 
 # Use ActiveModel has_secure_password
@@ -40,6 +39,7 @@ gem 'nav_lynx'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+	gem 'mailcatcher'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
