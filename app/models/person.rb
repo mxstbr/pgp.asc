@@ -32,7 +32,16 @@ class Person < ActiveRecord::Base
 		end
 
 		# Put together URL
-		website = website_protocol + /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/.match(person.url)[2] + '/pgp.asc'
+		website = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/.match(person.url)[2]
+		person.url = website
+
+		if Person.exists?(:url => website) 
+			return false
+		end
+
+		website = website_protocol + website + '/pgp.asc'
+		puts '##########################################'
+		puts website
 
 		# Get the key with a CURL request
 		request = Curl::Easy.new(website)
