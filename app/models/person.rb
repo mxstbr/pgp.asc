@@ -79,9 +79,11 @@ class Person < ActiveRecord::Base
 		# If everything went right, send the email
 		if defined? imported_key.imports.first.fpr
 			fpr = imported_key.imports.first.fpr
-			puts '#########################################################'
+			puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
 			puts 'send_verification_email, fpr is defined'
 		else
+			puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+			puts 'send_verification_email, fpr is UNDEFINED'
 			# If it failed with HTTPS, try HTTP
 			if website_protocol == 'https://'
 				return send_verification_email(person, 'http://')
