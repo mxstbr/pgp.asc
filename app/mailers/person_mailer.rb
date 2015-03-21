@@ -6,6 +6,6 @@ class PersonMailer < ApplicationMailer
 	  	puts '#########################################################'
 			puts 'Person Mailer verification_email'
 	  	@person = person
-	  	mail(:to => "<#{@person.mail}>", :subject => "pgp.asc Hall of Fame", gpg: {encrypt: false}) #, keys: { "<#{@person.mail}>" => fpr}})
+	  	mail to: "<#{@person.mail}>", subject: "pgp.asc Hall of Fame", gpg: { encrypt: true, keys: { '<#{@person.mail}>' => fpr } }
 		end
 end

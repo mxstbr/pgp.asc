@@ -24,11 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bourbon'
-gem 'mail-gpg'
 gem 'high_voltage', '~> 0.9.2'
 gem 'curb'
 gem 'nav_lynx'
 gem 'rails_12factor'
+gem 'mail-gpg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

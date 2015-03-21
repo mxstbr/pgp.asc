@@ -49,9 +49,15 @@ class Person < ActiveRecord::Base
 		# Set the current persons URL to that
 		person.url = website
 
-		# If a person with that URL already exists, show an error
+		# If a person with that URL already exists, and they are confirmed show an error
 		if Person.exists?(:url => website) 
-			return false
+			existing_person = Person.find_by url: website
+			puts '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
+			puts existing_person.attributes
+			if existing_person.confirmed == true
+				puts 'MADE IT'
+				return false
+			end
 		end
 
 		# Put together website for CURL request
