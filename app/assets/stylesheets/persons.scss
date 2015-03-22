@@ -14,6 +14,8 @@ $grey: #888888;
 $max-width: 818px; // 818px
 $max-height: 870px;
 
+$tabwidth: 120px;
+
 // Mixins
 
 @mixin transition($transition-property, $transition-time, $method) {
@@ -145,7 +147,6 @@ p {
 .header {
 	height: 100vh;
 	width: 100vw;
-	border-top: 0.5vh solid $basecolor;
 	background-color: $dark-background-color;
 	color: white;
 }
@@ -187,19 +188,22 @@ p {
 	color: white;
 }
 
-.header .nav a {
+.nav a {
 	color: white;
 }
 
-.header .nav a:hover {
+.nav a:hover {
 	color: $basecolor;
 }
 
 nav {
 	width: 100%;
 	height: 3em;
-	margin-top: 18px;
+	padding-top: 18px;
+	margin-top: 0;
 	position: relative;
+	background-color: $dark-background-color;
+	border-top: 0.5vh solid $basecolor;
 }
 
 .nav {
@@ -213,7 +217,7 @@ nav {
 .nav__item {
 	display: inline-block;
 	margin-right: 2em;
-	margin-top: 1em;
+	margin-top: 0.3em;
 	font-style: normal;
 }
 
@@ -236,8 +240,9 @@ nav {
 #icon img {
 	height: 2em;
 	position: absolute;
-	top: 1.8em;
+	top: 1.1em;
 	left: 1.4em;
+	z-index: 1;
 }
 
 //
@@ -275,6 +280,73 @@ nav {
 .content--long {
 	max-width: 640px;
 	margin: 0 auto;
+}
+
+// Tabs
+.tabs {
+ position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.tabs__nav {
+	margin: 0; padding: 0;
+	list-style: none;
+	margin-top: 3em;
+	padding-left: 11%;
+}
+
+.tabs__nav:hover {
+	cursor: default;
+}
+
+.tabs__nav .tabs__nav-item {
+	margin: 0; padding: 0;
+	display: inline-block;
+	width: $tabwidth;
+	height: 40px;
+}
+
+.tabs__nav input[type='radio']:checked + label {
+	background: $basecolor;
+	color: white;
+}
+
+.tabs__nav input[type='radio'] {
+	display: none;
+}
+
+.tabs__nav .tabs__nav-item {
+	font-size: 15px;
+	line-height: 40px;
+	height: 40px;
+	padding: 0 20px;
+	display: block;
+	color: $basecolor;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+ 	border-radius: 3px 3px 0 0;
+ 	display: inline-block;
+ 	border: 1px solid $basecolor;
+ 	margin-bottom: -1px;
+}
+
+.tabs__nav-item:hover,
+.tabs__nav-item:active {
+	background: $basecolor;
+	color: white;
+	cursor: pointer;
+}
+
+.tabs__content {
+  	background: #fff;
+	position: relative;
+  	border: 1px solid $basecolor;
+  	border-radius: 3px;
+  	padding: 5% 10%;
+  	margin-top: -1px;
 }
 
 //

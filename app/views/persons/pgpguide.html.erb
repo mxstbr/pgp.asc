@@ -30,13 +30,15 @@
 		<h2>How do I get started?</h2>
 
 		<section class="tabs">
-			<ul class="tabs-nav">
-				<li class="nav-item active" id="tab-1"><a href="#osx" class="nav-item-link">OS X</a></li>
-				<li class="nav-item" id="tab-2"><a href="#windows" class="nav-item-link">Windows</a></li>
-				<li class="nav-item" id="tab-3"><a href="#linux" class="nav-item-link">Linux</a></li>
-			</ul>
-			<div class="clear-shadow"></div>
-		    <div class="content">
+			<div class='tabs__nav'>
+				<input id='checkbox-osx' type='radio' name='os' value='osx' checked onclick='tabs()' />
+				<label for='checkbox-osx' class='tabs__nav-item' >OS X</label>
+				<input id='checkbox-windows' type='radio' name='os' value='windows' onclick='tabs()' />
+				<label for='checkbox-windows' class='tabs__nav-item' >Windows</label>
+				<input id='checkbox-linux' type='radio' name='os' value='linux' onclick='tabs()' />
+				<label for='checkbox-linux' class='tabs__nav-item' >Linux</label>
+			</div>
+		    <div class="tabs__content">
 		        <div id="osx">
 		           
 						<h3>Step 1: Install the GPGTools GPG Suite for OS X</h3>

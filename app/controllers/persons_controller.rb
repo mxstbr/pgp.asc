@@ -17,7 +17,6 @@ class PersonsController < ApplicationController
         # Otherwise show an error
         flash[:error] = "Something went wrong with the verification, please try again!"
       end
-
       redirect_to root_path
     end
   end
