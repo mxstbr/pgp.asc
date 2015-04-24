@@ -34,7 +34,7 @@
         <%= form_for @person, url: persons_path, html: {class: "footer--form"} do |f| %>
           <%= f.text_field :name, class: "footer__form--input", placeholder: "Your name" %>
           <%= f.text_field :url, class: "footer__form--input", placeholder: "Your website" %>
-          <%= f.text_field :mail, class: "footer__form--input", placeholder: "Your email" %>
+          <%= f.text_field :mail, class: "footer__form--input", placeholder: "Your email", type: 'email' %>
           <%= f.submit "", class: "footer__form--submit-button", type: "image", src: "assets/button_submit.png" %>
         <% end %>
         <!-- End of Form -->

@@ -7,9 +7,6 @@ class Person < ActiveRecord::Base
 	# then sends the verification email. Mode is either 'http' or 'https'
 	def send_verification_email(person = self, website_protocol = 'https://')
 
-		puts '#########################################################'
-		puts 'send_verification_email'
-
 		website_regex = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/
 		exists = true
 		# Generates a random, unique hash for every person
@@ -23,17 +20,14 @@ class Person < ActiveRecord::Base
 		  end
 		end while exists === true
 
-		# Format the URL
 
-		# If no website_protocol was passed
-		if 	website_protocol.empty?
-			# Get the one from the URL
-			website_protocol = website_regex.match(person.url)[1]
-			# If the URL didn't have one
-			if 	website_protocol.empty?
-				# Set it to HTTPS
-				website_protocol = 'https://'
-			end
+		# Get the website protocol from the URL
+		passed_website_protocol = website_regex.match(person.url)[1]
+
+		# If the URL had a website protocol
+		if (defined?passed_website_protocol).nil?
+			# Use that one
+			website_protocol = passed_website_protocol
 		end
 
 		# Get actual URL part, i.e. 'pgpasc.org' in 'http://pgpasc.org/halloffame.html'
@@ -50,12 +44,9 @@ class Person < ActiveRecord::Base
 		person.url = website
 
 		# If a person with that URL already exists, and they are confirmed show an error
-		if Person.exists?(:url => website) 
+		if Person.exists?(:url => website)
 			existing_person = Person.find_by url: website
-			puts '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
-			puts existing_person.attributes
 			if existing_person.confirmed == true
-				puts 'MADE IT'
 				return false
 			end
 		end
@@ -68,29 +59,19 @@ class Person < ActiveRecord::Base
 			request = Curl::Easy.new(website)
 			request.ssl_verify_peer = false
 			request.perform
-		rescue Curl::Err::SSLPeerCertificateError, Curl::Err::HostResolutionError => error
-			# If the request fails, flash an error message
-			return false
-		end
-		# Slice the key from the HTML
-		key = request.body_str
-	    # Import the key
-		imported_key = GPGME::Key.import(key)
-		# If everything went right, send the email
-		if defined? imported_key.imports.first.fpr
-			fpr = imported_key.imports.first.fpr
-			puts '&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&'
-			puts 'send_verification_email, fpr is defined'
-		else
-			puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-			puts 'send_verification_email, fpr is UNDEFINED'
+		rescue Curl::Err::SSLPeerCertificateError, Curl::Err::HostResolutionError, Curl::Err::ConnectionFailedError => error
 			# If it failed with HTTPS, try HTTP
 			if website_protocol == 'https://'
 				return send_verification_email(person, 'http://')
 			end
-			# Otherwise just show an error
+			# If the request fails with HTTPS and with HTTP, flash an error message
 			return false
 		end
-		PersonMailer.verification_email(person, fpr).deliver_now
+		# Slice the key from the HTML
+		key = request.body_str
+	  # Import the key
+		imported_key = GPGME::Key.import(key)
+		# Send the email
+		PersonMailer.verification_email(person, key).deliver_now
 	end
 end

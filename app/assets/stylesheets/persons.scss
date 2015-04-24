@@ -381,9 +381,11 @@ nav {
 	margin: 2px 0;
 	background-color: $dark-background-color;
 	padding: 0.5em 1em;
+	color: #FFF;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
 	font-size: 14px;
 }
 
