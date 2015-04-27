@@ -29,6 +29,7 @@ gem 'curb'
 gem 'nav_lynx'
 gem 'rails_12factor'
 gem 'mail-gpg'
+gem 'inline_svg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
