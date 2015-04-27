@@ -12,7 +12,7 @@ class PersonsController < ApplicationController
         person = Person.find_by confirm_hash: params[:ch]
         person.update_attribute(:confirmed, true)
         # The show a success message
-        flash[:success] = "You are now in the Hall of Fame, thanks!"
+        flash[:success] = "You are now in the Hall of Fame, welcome!"
       else
         # Otherwise show an error
         flash[:error] = "Something went wrong with the verification, please try again!"
@@ -24,12 +24,9 @@ class PersonsController < ApplicationController
   def create
     @person = Person.create(person_params)
 
-    puts '#########################################################'
-    puts 'create action in persons_controller'
-
     # If nothing went wrong with the sending of the mail
     if @person.save
-      flash[:success] = "Almost there #{@person.name}, check your mail!"
+      flash[:success] = "Almost there, check your inbox!"
     else
       # This gets shown when something went wrong in the model
       flash[:error] = "Something went wrong, did you enter the right URL?"
