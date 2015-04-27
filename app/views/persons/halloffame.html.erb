@@ -3,18 +3,18 @@
 <!-- Content -->
 <section class="content content--long" id="content">
 	<h1>Hall of Fame</h1>
-	<p>To get in the Hall of Fame, simply submit your details below:</p>	
+	<p>To get into the Hall of Fame, submit your details below:</p>	
 	<!-- Form -->
-	<%= form_for @person, url: persons_path, html: {class: "footer--form"} do |f| %>
-	  <%= f.text_field :name, class: "footer__form--input", placeholder: "Your name" %>
-	  <%= f.text_field :url, class: "footer__form--input", placeholder: "Your website" %>
-	  <%= f.text_field :mail, class: "footer__form--input", placeholder: "Your email" %>
-	  <%= f.submit "", class: "footer__form--submit-button", type: "image", src: "assets/button_submit.png" %>
+	<%= form_for @person, url: persons_path, html: {class: "halloffame__form"} do |f| %>
+	  <%= f.text_field :name, class: "halloffame__form--input", placeholder: "Your name" %>
+	  <%= f.text_field :url, class: "halloffame__form--input", placeholder: "Your website" %>
+	  <%= f.text_field :mail, class: "halloffame__form--input", placeholder: "Your email" %>
+	  <%= f.submit "", class: "halloffame__form--submit-button", type: "image", src: "assets/button_submit.png" %>
 	<% end %>
 	<!-- End of Form -->
 	<ul>
 		<% @persons.each do |person| %>
-			<li><%= person.name %> - <a href="<%= person.url %>"><%= person.url %></a></li>
+			<li><%= person.name %> - <a href="http://<%= person.url %>"><%= person.url %></a></li>
 		<% end %>
 	</ul>
 </section>
