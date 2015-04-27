@@ -12,7 +12,6 @@ $dark-background-color: #1b1b1b;
 $grey: #888888;
 
 $max-width: 818px; // 818px
-$max-height: 870px;
 
 $tabwidth: 120px;
 
@@ -80,6 +79,8 @@ body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	font-size: 18px;
+	border-top: 0.5vh solid $basecolor;
+	overflow-x: hidden;
 }
 
 h1,
@@ -151,11 +152,20 @@ p {
 	color: white;
 }
 
+.header__main {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+}
+
 .header__logo {
 	margin: 0 auto;
-	margin-top: 25vh;
-	height: 20vh;
-	width: 100%; // IE fix for responsive SVGs
+	height: 10%;
+	display: block;
+	width: 55%;
+	max-width: 250px;
 }
 
 .header__heading {
@@ -201,14 +211,14 @@ nav {
 	height: 3em;
 	padding-top: 18px;
 	margin-top: 0;
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
 	background-color: $dark-background-color;
-	border-top: 0.5vh solid $basecolor;
 }
 
 .nav {
 	float: right;
-	margin-right: 5vw;
 	margin-top: 0;
 	position: relative;
 	visibility: visible;
@@ -252,7 +262,7 @@ nav {
 .content {
 	max-width: $max-width;
 	margin: 0 auto;
-	padding: 7.5vh 0;
+	padding: 10vh 0;
 }
 
 .content__section {
@@ -349,6 +359,25 @@ nav {
   	margin-top: -1px;
 }
 
+// Hall of Fame form
+
+.halloffame__form {
+	display: inline-block;
+}
+
+.halloffame__form--input {
+	margin: 2px 0;
+	margin-bottom: 10px;
+	background-color: $dark-background-color;
+	padding: 0.5em 1em;
+	color: #FFF;
+}
+
+.halloffame__form--submit-button {
+	clear: both;
+	float: left;
+}
+
 //
 // Footer
 //
@@ -359,6 +388,7 @@ nav {
 	background-color: $dark-background-color;
 	color: white;
 	padding: 5vh 0;
+	position: relative;
 }
 
 .wrapper {
@@ -516,8 +546,7 @@ input[type="email"] {
 @media screen and (max-width: $max-width) {
 
 	.content {
-		margin-left: 2vw;
-		margin-right: 2vw;
+		margin: 0 auto;
 	}
 
 	.content__section {
@@ -544,41 +573,24 @@ input[type="email"] {
 	}
 
 	.footer__form {
-		width: 90%;
+		width: 100%;
 		display: inline-block;
+		box-sizing: border-box;
 	}
 
 	.footer__section {
 		float: none;
-		margin: 0 2vw;
-		width: 94%;
+		margin: 0 auto;
+		width: 90%;
 	}
 
 	.footer__form--input {
 		display: block;
 		width: 100%;
+		box-sizing: border-box;
 	}
 
 	.footer__form--submit-button {
 		float: right;
-		margin-right: 4%;
-	}
-}
-
-@media screen and (max-height: $max-height) {
-	.header__logo {
-		margin-top: 15vh;
-	}
-
-	.header__heading {
-		font-size: 60px;
-	}
-
-	.header__subheading {
-		font-size:27px;
-	}
-
-	.header__arrow {
-		height: 10vh;
 	}
 }
