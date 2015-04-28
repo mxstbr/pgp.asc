@@ -1,10 +1,49 @@
+<script>
+	$(function() {
+		if (localStorage.getItem('animation') !== 'played') {
+			// Hide elements that get faded in
+			$('nav').css('opacity', '0');
+			$('#icon img').css('opacity', '0');
+			$('.header__heading').css('opacity', '0');
+			$('.header__subheading').css('opacity', '0');
+			$('.header__arrow').css('opacity', '0');
+			// Play logo unlocking animation
+			$('#logo *').css('animation-iteration-count', '1');
+
+			// Fade header elements in
+			setTimeout(function() {
+				// Add transition to elements that fade in
+				$('nav').css('transition', 'opacity 250ms');
+				$('#icon img').css('transition', 'opacity 250ms');
+				$('.header__heading').css('transition', 'opacity 250ms');
+				$('.header__subheading').css('transition', 'opacity 250ms');
+				$('.header__arrow').css('transition', 'opacity 250ms');
+				$('.header__heading').css('opacity', '1');
+				setTimeout(function() {
+					$('.header__subheading').css('opacity', '1');
+					setTimeout(function() {
+						$('nav').css('opacity', '1');
+						$('#icon img').css('opacity', '1');
+						setTimeout(function() {
+							$('.header__arrow').css('opacity', '1');
+						}, 300);
+					}, 300);
+				}, 150);
+			}, 1000);
+			localStorage.setItem("animation", "played");
+		}
+	});
+</script>
+
 <!-- Header -->
 <section class="header">
 	<%= render 'nav' %>
 	
-	<img src="/assets/icon_maze_key.svg" alt="pgp.asc logo" class="header__logo" id="logo"></img>
-	<h1 class="header__heading">pgp.asc</h1>
-	<h2 class="header__subheading">Decentralize public PGP keys</h2>
+	<div class="header__main">
+		<%= inline_svg "icon_maze_key.svg", class: "header__logo", id: "logo" %>
+		<h1 class="header__heading">pgp.asc</h1>
+		<h2 class="header__subheading">Decentralize public PGP keys</h2>
+	</div>
 
 	<a href="#content" class="header__arrow"><img src="/assets/button_further.svg" class="header__arrow"></img></a>
 </section>
@@ -15,7 +54,7 @@
 	<div class="content__section group">
 		<img src="/assets/icon_maze_key.svg" alt="Hexagonal Maze with a key in the middle" class="content__hex"></img>
 		<h3 class="content__heading">What is pgp.asc?</h3>
-		<p class="content__text">pgp.asc is an initiative to decentralize public PGP keys, making it easier to get an up to date and authenticated key.</p> 
+		<p class="content__text">pgp.asc is an initiative to decentralize public PGP keys, making it easier to get an up to date and authenticated key.</p>
 		<p class="content__text">Sounds complicated? It isn’t: Just upload your public PGP key to your websites root folder and you’re good to go!</p>
 	</div>
 	<div class="content__section group">
