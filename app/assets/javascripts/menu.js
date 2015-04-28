@@ -1,29 +1,16 @@
 
-$(function() {
+function showMenu(e) {
 	// Mobile menu
-	var pull 		= $('#pull');
-		menu 		= $('nav ul');
-		menuHeight	= menu.height();
-
-	$(pull).on('click', function(e) {
-		e.preventDefault();
-		if (menu.css('visibility') === 'visible') {
-			menu.css('visibility', 'hidden');
-			menu.css('opacity', '0.0');
-		} else {
-			menu.css('visibility', 'visible');
-			menu.css('opacity', '1.0');
-		}
-	});
-
-	// Show mobile menu on window resize
-	$(window).resize(function(){
-		var w = $(window).width();
-		if(w > 320 && menu.css('visibility') === 'hidden') {
-			menu.removeAttr('style');
-		}
-	});
-});
+	var menu 		= $('nav ul');
+	var menuHeight	= menu.height();
+	if (menu.css('visibility') === 'visible') {
+		menu.css('visibility', 'hidden');
+		menu.css('opacity', '0.0');
+	} else {
+		menu.css('visibility', 'visible');
+		menu.css('opacity', '1.0');
+	}
+}
 
 // PGP Guide tab layout
 function tabs() {
@@ -53,4 +40,3 @@ function tabs() {
 		linux.css('display', 'block');
 	}
 }
-	
