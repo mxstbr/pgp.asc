@@ -12,3 +12,4 @@
 !/log/.keep
 /tmp
 .DS_Store
+.env
