@@ -1,35 +1,40 @@
 <script>
 	$(function() {
+		// Check if animation has played before, and don't show it if it has
 		if (localStorage.getItem('animation') !== 'played') {
 			// Hide elements that get faded in
+			$('.header__logo').css('opacity', '0');
 			$('nav').css('opacity', '0');
 			$('#icon img').css('opacity', '0');
 			$('.header__heading').css('opacity', '0');
 			$('.header__subheading').css('opacity', '0');
 			$('.header__arrow').css('opacity', '0');
-			// Play logo unlocking animation
-			$('#logo *').css('animation-iteration-count', '1');
 
-			// Fade header elements in
 			setTimeout(function() {
-				// Add transition to elements that fade in
-				$('nav').css('transition', 'opacity 250ms');
-				$('#icon img').css('transition', 'opacity 250ms');
-				$('.header__heading').css('transition', 'opacity 250ms');
-				$('.header__subheading').css('transition', 'opacity 250ms');
-				$('.header__arrow').css('transition', 'opacity 250ms');
-				$('.header__heading').css('opacity', '1');
+				// Fade logo in
+				$('.header__logo').css('transition', 'opacity 250ms');
+				$('.header__logo').css('opacity', '1');
 				setTimeout(function() {
-					$('.header__subheading').css('opacity', '1');
+					// Fade header elements in and add transition to elements that fade in
+					$('nav').css('transition', 'opacity 250ms');
+					$('#icon img').css('transition', 'opacity 250ms');
+					$('.header__heading').css('transition', 'opacity 250ms');
+					$('.header__subheading').css('transition', 'opacity 250ms');
+					$('.header__arrow').css('transition', 'opacity 250ms');
+					// Fade heading and subheading in
+					$('.header__heading').css('opacity', '1');
 					setTimeout(function() {
-						$('nav').css('opacity', '1');
-						$('#icon img').css('opacity', '1');
+						$('.header__subheading').css('opacity', '1');
+						// Fade nav and arrow in
 						setTimeout(function() {
+							$('nav').css('opacity', '1');
+							$('#icon img').css('opacity', '1');
 							$('.header__arrow').css('opacity', '1');
-						}, 300);
-					}, 300);
-				}, 150);
-			}, 1000);
+						}, 600);
+					}, 150);
+				}, 300);
+			}, 150);
+			// Set animation value in localStorage for the next time the person opens the page
 			localStorage.setItem("animation", "played");
 		}
 	});
@@ -38,7 +43,6 @@
 <!-- Header -->
 <section class="header">
 	<%= render 'nav' %>
-	
 	<div class="header__main">
 		<%= inline_svg "icon_maze_key.svg", class: "header__logo", id: "logo" %>
 		<h1 class="header__heading">pgp.asc</h1>
