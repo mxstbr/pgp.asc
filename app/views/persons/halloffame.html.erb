@@ -12,9 +12,9 @@
 	  <%= f.submit "", class: "halloffame__form--submit-button", type: "image", src: "assets/button_submit.png" %>
 	<% end %>
 	<!-- End of Form -->
-	<ul>
+	<ul class="halloffame__person-list">
 		<% @persons.each do |person| %>
-			<li><%= person.name %> - <a href="http://<%= person.url %>"><%= person.url %></a></li>
+			<li class="halloffame__person"><%= person.name %> - <a href="http://<%= person.url %>"><%= person.url %></a></li>
 		<% end %>
 	</ul>
 </section>
