@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: pgp-rails_production
-  username: pgp-rails
-  password: <%= ENV['PGP-RAILS_DATABASE_PASSWORD'] %>
+  username: <%= ENV['PRODUCTION_DATABASE_USERNAME'] %>
+  password: <%= ENV['PRODUCTION_DATABASE_PASSWORD'] %>
