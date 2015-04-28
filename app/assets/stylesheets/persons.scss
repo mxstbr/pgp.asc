@@ -94,7 +94,7 @@ a {
 	font-style: italic;
 	text-decoration: none;
 	color: $basecolor;
-	font-weight: 300;
+	font-weight: 700;
 }
 
 a:hover {
@@ -157,6 +157,7 @@ p {
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
 	width: 100%;
 }
 
@@ -179,6 +180,7 @@ p {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 36px;
 	margin-top: 0;
+	font-weight: 400;
 }
 
 .header__arrow {
@@ -230,6 +232,7 @@ nav {
 	margin-right: 2em;
 	margin-top: 0.3em;
 	font-style: normal;
+	font-weight: 400;
 }
 
 .nav__item--active {
@@ -422,6 +425,8 @@ nav {
 	background-color: $dark-background-color;
 	padding: 0.5em 1em;
 	color: #FFF;
+	border: 1px solid white;
+	border-radius: 1px;
 }
 
 input[type="text"],
@@ -624,19 +629,19 @@ input[type="email"] {
 .logo__outer-ring{
   animation: outer-ring ease-in-out 3s;
   animation-iteration-count: 0;
-  transform-origin: 50% 50%;
+  transform-origin: center center;
   -webkit-animation: outer-ring ease-in-out 3s;
   -webkit-animation-iteration-count: 0;
-  -webkit-transform-origin: 50% 50%;
+  -webkit-transform-origin: center center;
   -moz-animation: outer-ring ease-in-out 3s;
   -moz-animation-iteration-count: 0;
-  -moz-transform-origin: 50% 50%;
+  -moz-transform-origin: center center;
   -o-animation: outer-ring ease-in-out 3s;
   -o-animation-iteration-count: 0;
-  -o-transform-origin: 50% 50%;
+  -o-transform-origin: center center;
   -ms-animation: outer-ring ease-in-out 3s;
   -ms-animation-iteration-count: 0;
-  -ms-transform-origin: 50% 50%;
+  -ms-transform-origin: center center;
 }
 
 @keyframes outer-ring{
@@ -717,19 +722,19 @@ input[type="email"] {
 .logo__middle-ring{
   animation: middle-ring ease-in-out 3s;
   animation-iteration-count: 0;
-  transform-origin: 50% 50%;
+  transform-origin: center center;
   -webkit-animation: middle-ring ease-in-out 3s;
   -webkit-animation-iteration-count: 0;
-  -webkit-transform-origin: 50% 50%;
+  -webkit-transform-origin: center center;
   -moz-animation: middle-ring ease-in-out 3s;
   -moz-animation-iteration-count: 0;
-  -moz-transform-origin: 50% 50%;
+  -moz-transform-origin: center center;
   -o-animation: middle-ring ease-in-out 3s;
   -o-animation-iteration-count: 0;
-  -o-transform-origin: 50% 50%;
+  -o-transform-origin: center center;
   -ms-animation: middle-ring ease-in-out 3s;
   -ms-animation-iteration-count: 0;
-  -ms-transform-origin: 50% 50%;
+  -ms-transform-origin: center center;
 }
 
 @keyframes middle-ring{
@@ -810,19 +815,19 @@ input[type="email"] {
 .logo__inner-ring{
   animation: inner-ring ease-in-out 3s;
   animation-iteration-count: 0;
-  transform-origin: 50% 50%;
+  transform-origin: center center;
   -webkit-animation: inner-ring ease-in-out 3s;
   -webkit-animation-iteration-count: 0;
-  -webkit-transform-origin: 50% 50%;
+  -webkit-transform-origin: center center;
   -moz-animation: inner-ring ease-in-out 3s;
   -moz-animation-iteration-count: 0;
-  -moz-transform-origin: 50% 50%;
+  -moz-transform-origin: center center;
   -o-animation: inner-ring ease-in-out 3s;
   -o-animation-iteration-count: 0;
-  -o-transform-origin: 50% 50%;
+  -o-transform-origin: center center;
   -ms-animation: inner-ring ease-in-out 3s;
   -ms-animation-iteration-count: 0;
-  -ms-transform-origin: 50% 50%;
+  -ms-transform-origin: center center;
 }
 
 @keyframes inner-ring{
