@@ -2,18 +2,19 @@
 
 ## Table of Contents
 
-- [pgp.asc](#pgpasc)
-	- [What is pgp.asc?](#what-is-pgpasc)
-	- [Example](#example)
-	- [Why should I?](#why-should-i)
-	- [Goals?](#goals)
-	- [How can I help?](#how-can-i-help)
-		- [Todo List](#todo-list)
-		- [Website](#website)
-	- [FAQ](#faq)
-		- [Why not use key servers, keybase, the blockchain, DNS,...?](#why-not-use-key-servers-keybase-the-blockchain-dns)
-		- [How is this decentralized?](#how-is-this-decentralized)
-		- [Why should my website serve pgp.asc with HTTPS?](#why-should-my-website-serve-pgpasc-with-https)
+- [`pgp.asc`](#pgpasc)
+  - [What is pgp.asc?](#what-is-pgpasc)
+  - [Example](#example)
+  - [Why should I?](#why-should-i)
+  - [Goals?](#goals)
+  - [How can I help?](#how-can-i-help)
+    - [Getting up and running](#getting-up-and-running)
+    - [Project Structure](#project-structure)
+    - [Target groups](#target-groups)
+  - [FAQ](#faq)
+    - [Why not use key servers, keybase, the blockchain, DNS,...?](#why-not-use-key-servers-keybase-the-blockchain-dns)
+    - [How is this decentralized?](#how-is-this-decentralized)
+    - [Why should my website serve `pgp.asc` with HTTPS?](#why-should-my-website-serve-pgpasc-with-https)
 
 ## What is pgp.asc?
 
@@ -53,25 +54,11 @@ Right now, the primary goals are to get the website up and running and to work o
 
 First of all, awesome that you want to help!
 
-We basically need help with everything, ranging from Front-End and Design over Back-end to Copywriting. Take a look at the Todo List below and submit a PR with your ideas! 
+We basically need help with everything, ranging from Front-End and Design over Back-end to Copywriting. Take a look at the issues and submit new ones if you have an idea or found a bug!
 
-### Todo List
+### Getting up and running
 
-- [ ] Website
-	- [ ] Design, [Discussion](/../../issues/1)
-		- [ ] Color Scheme
-		- [ ] Sketches/Pictures? (similar to [humans.txt](http://humanstxt.org))
-		- [ ] Logo?
-	- [ ] Automated Hall of Fame, [Discussion](/../../issues/3)
-- [ ] Copywriting
-	- [ ] General Copy, [Discussion](/../../issues/2)
-	- [ ] PGP Guide for beginners, [Discussion](/../../issues/5)
-
-### Website
-
-#### Getting up and running
-
-This assumes you have Ruby, Rails and all the needed utilities installed and a PostgreSQL instance running. If you get any errors during this setup, please refer to your search engine for help! If you still cannot figure it out, contact me on [twitter](http://mxs.is/@).
+This assumes you have Ruby, Rails and all the needed utilities installed and a PostgreSQL instance running. If you get any errors during this setup, please refer to your search engine for help! If you still cannot figure it out, contact me on [twitter](http://twitter.com/mxstbr).
 
 - Clone the repo to your local machine using `git clone git@github.com:mstoiber/pgp.asc.git`.
 
@@ -85,17 +72,17 @@ This assumes you have Ruby, Rails and all the needed utilities installed and a P
 
 - Run `rake db:create`, followed by `rake db:migrate`.
 
-- Run `rails server`, and go to `http://localhost:3000` to see the site! If you send an email through the form, you can find it at `http://127.0.0.1:1080/`. (This is mailcatcher, it literally catches the mails)
+- Run `rails server`, and go to `http://localhost:3000` to see the site! If you send an email through the form, you can find it at `http://127.0.0.1:1080/`. (This is mailcatcher, as the name suggests it "catches" the mails)
 
-#### Project Structure
+### Project Structure
 
 If you want to edit the frontend, ignore everything except the `app` folder. In there you should focus on the `assets` (Stylesheets, Scripts and Images) and the `views/persons` folder. (The actual HTML files you see)
 
 For the backend, all the important logic is in the Persons Controller (`app/controllers/persons_controller.rb`) and the Person Model. (`app/models/person.rb`)
 
-If you are looking for something but can't find it, contact me on [twitter](http://mxs.is/@).
+If you are looking for something but can't find it, contact me on [twitter](http://twitter.com/mxstbr).
 
-#### Target groups
+### Target groups
 
 1) People who know and use PGP
 
@@ -107,23 +94,7 @@ I have no idea what to do with them. Ideas?
 
 3) People who have no idea WTF is going on
 
-We can use the website to spread the word about E-Mail encryption and maybe later about other privacy related issues. What about a prominent link on the homepage á la "I have no idea WTF is going on" linking to a basic guide to PGP. (E.g. http://curtiswallen.com/pgp) 
-
-#### Copy
-
-I (Max) suck at copywriting, but had to write something to start out. If you have any ideas on how to improve the wording, what to include and what to leave out, [discuss it in issue #2](/../../issues/2).
-
-#### Design
-
-My (Max) design is very basic, and not very inviting. If you want to help with the Design, join the [discussion in issue #1](/../../issues/1)!
-
-#### Backend
-
-I think a "Hall of Fame" is a great idea to motivate people to upload a pgp.asc file to their website. I'd be great if it runs automatically, i.e. people submit their link through the website, we check if the pgp.asc file exists, send them an encrypted mail with the key they provided to the mail adress they provided with a validation link inside. As soon as they click that link, their website gets added to the Hall of Fame. Already got an idea on how to accomplish parts of this? Awesome, [join the disscusion in issue #3](/../../issues/3)! For general backend related ideas, please open a new issue!
-
-#### Front-End
-
-As soon as basic design decisions are made, we can start coding it out. 
+We can use the website to spread the word about E-Mail encryption and maybe later about other privacy related issues. What about a prominent link on the homepage á la "I have no idea WTF is going on" linking to a basic guide to PGP. (E.g. http://curtiswallen.com/pgp)
 
 ## FAQ
 
