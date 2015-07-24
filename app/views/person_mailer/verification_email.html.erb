@@ -1,12 +1,4 @@
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h1>Welcome <%= @person.name %> to the pgp.asc Hall of Fame!</h1>
-    <p>There is just one thing remaining before you can see your name in all its glory on http://pgpasc.org!</p>
-    <a href="http://pgpasc.org/persons?ch=<%= @person.confirm_hash %>" class="button">Click here to verify your entry!</a>
-    <p>Alternatively, copy and paste this link into your browser: http://pgpasc.org/persons?ch=<%= @person.confirm_hash %></p>
-    <p>You received this email because you filled out the form on http://pgpasc.org.</p>
-  </body>
-</html>
+Welcome <%= @person.name %> to the pgp.asc Hall of Fame! There is just one thing remaining before you can see your name in all its glory on http://www.pgpasc.org!
+Copy and paste this link into your browser: http://pgpasc.org/persons?ch=<%= @person.confirm_hash %>
+
+You received this email because you filled out the form on http://pgpasc.org.
