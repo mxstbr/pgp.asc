@@ -7,7 +7,7 @@ class Person < ActiveRecord::Base
 	# then sends the verification email. Mode is either 'http' or 'https'
 	def send_verification_email(person = self, website_protocol = 'https://')
 
-		website_regex = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3})(\/\S*)?$/
+		website_regex = /^(http\:\/\/|https\:\/\/)?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,63})(\/\S*)?$/
 		exists = true
 		# Generates a random, unique hash for every person
 		begin
