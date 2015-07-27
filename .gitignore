@@ -20,3 +20,4 @@
 # Ignore SSL certificate and key
 server.crt
 server.key
+bundle.pem
