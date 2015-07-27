@@ -16,3 +16,7 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore SSL certificate and key
+server.crt
+server.key
