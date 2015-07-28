@@ -39,34 +39,35 @@
       </div>
       <div class="footer__section footer__section--social">
         <h4 class="footer_heading">Social Links</h4>
-        <a href="https://github.com/mstoiber/pgp.asc"><div class="social__github"></div></a>
-        <a href="https://twitter.com/mxstbr"><div class="social__twitter"></div></a>
-        <a href="https://www.facebook.com/pgp.asc"><div class="social__fb"></div></a>
+        <a href="https://github.com/mstoiber/pgp.asc" onclick="OWATracker.trackAction('social', 'click', 'github');"><div class="social__github"></div></a>
+        <a href="https://twitter.com/mxstbr" onclick="OWATracker.trackAction('social', 'click', 'twitter');"><div class="social__twitter"></div></a>
+        <a href="https://www.facebook.com/pgp.asc" onclick="OWATracker.trackAction('social', 'click', 'facebook');"><div class="social__fb"></div></a>
       </div>
       <div class="footer__section footer__section--contribute">
         <h4 class="footer__heading">Contribute</h4>
-        <p class="footer__text">Head over to <a href="https://github.com/mxstbr/pgp.asc">GitHub</a> to join the discussion!</p>
+        <p class="footer__text">Head over to <a href="https://github.com/mxstbr/pgp.asc" onclick="OWATracker.trackAction('footer', 'click', 'github');">GitHub</a> to join the discussion!</p>
       </div>
     </div>
   </section>
 
-  <!-- Google Analytics -->
-  <script>
-  (function(b,o,i,l,e,r) {
-    b.GoogleAnalyticsObject = l;
-    b[l] || (b[l] =
-      function() {
-        (b[l].q = b[l].q || []).push(arguments)
-      });
-    b[l].l = +new Date;
-    e = o.createElement(i);
-    r = o.getElementsByTagName(i)[0];
-    e.src = '//www.google-analytics.com/analytics.js';
-    r.parentNode.insertBefore(e, r)
-  }(window, document, 'script', 'ga'));
-  ga('create', 'UA-49258834-2', 'auto');
-  ga('require', 'linkid', 'linkid.js');
-  ga('send', 'pageview');
+  <!-- Start Open Web Analytics Tracker -->
+  <script type="text/javascript">
+  //<![CDATA[
+  var owa_baseUrl = 'http://analytics.mxstbr.com/';
+  var owa_cmds = owa_cmds || [];
+  owa_cmds.push(['setSiteId', '4a7d8a01d9d8ddb8d8d43b48e835da7a']);
+  owa_cmds.push(['trackPageView']);
+  owa_cmds.push(['trackClicks']);
+  owa_cmds.push(['trackDomStream']);
+
+  (function() {
+    var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
+    owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
+    _owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
+    var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
+  }());
+  //]]>
   </script>
+  <!-- End Open Web Analytics Code -->
 </body>
 </html>
